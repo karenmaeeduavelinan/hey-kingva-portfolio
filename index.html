@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#1b4e2f" name="theme-color"/>
+<title>Hey, KingVA! | Social Media &amp; Creative Portfolio</title>
+<style>
+  :root {
+    --green: #1b4e2f;
+    --lime: #eafe1f;
+    --white: #ffffff;
+    --ink: #183c27;
+    --muted: #5d665f;
+    --radius: 18px;
+    --font: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+  html { margin: 0 !important; }
+  body { margin: 0 !important; padding-top: 0 !important; font-family: var(--font); color: var(--green); background: var(--lime); }
+  a { color: inherit; }
+  .site-header {
+    position: relative !important; top: auto !important; left: auto !important; right: auto !important;
+    height: 64px; z-index: auto !important; transform: none !important;
+    background: var(--green); color: var(--white);
+    padding: 16px clamp(18px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .brand { font-weight: 800; font-size: clamp(1.1rem, 2vw, 1.45rem); text-decoration: none; letter-spacing: -.04em; white-space: nowrap; }
+  .nav { display: flex; gap: clamp(12px, 2.3vw, 30px); align-items: center; }
+  .nav a { text-decoration: none; font-size: .83rem; font-weight: 600; }
+  .nav a:hover, .nav a:focus-visible { color: var(--lime); }
+  .menu-toggle { display: none; border: 1px solid #ffffff88; background: transparent; color: white; border-radius: 10px; padding: 9px 12px; font: inherit; }
+  main { overflow: hidden; }
+  section { padding: clamp(44px, 7vw, 88px) clamp(20px, 6vw, 80px); }
+  .hero { min-height: 76vh; display: flex; align-items: center; }
+  .hero-inner { width: min(100%, 1120px); margin: 0 auto; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .13em; font-size: .74rem; font-weight: 800; margin: 0 0 18px; }
+  h1, h2, h3, p { margin-top: 0; }
+  h1 { font-size: clamp(2.7rem, 7.5vw, 6.8rem); line-height: .96; letter-spacing: -.065em; max-width: 970px; margin-bottom: 22px; }
+  h2 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1; letter-spacing: -.055em; margin-bottom: 18px; }
+  h3 { letter-spacing: -.035em; }
+  .hero-copy { font-size: clamp(1rem, 1.8vw, 1.22rem); line-height: 1.6; max-width: 650px; margin-bottom: 28px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { min-height: 48px; padding: 14px 19px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; border-radius: 9px; border: 2px solid var(--green); background: var(--green); color: var(--white); font-weight: 750; text-decoration: none; transition: transform .18s ease, background .18s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-light { background: var(--white); color: var(--green); }
+  .btn-outline { background: transparent; color: var(--green); }
+  .btn:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid #111; outline-offset: 3px; }
+  .section-inner { width: min(100%, 1120px); margin: 0 auto; }
+  .services { background: var(--lime); }
+  .section-intro { max-width: 690px; line-height: 1.6; margin-bottom: 28px; }
+  .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .service-card { background: var(--white); border-radius: 14px; padding: clamp(20px, 3vw, 30px); min-height: 150px; }
+  .service-number { display: block; font-size: .78rem; font-weight: 800; margin-bottom: 20px; }
+  .service-card h3 { font-size: clamp(1.05rem, 2.2vw, 1.45rem); margin-bottom: 0; }
+  .work { background: var(--white); }
+  .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 30px; }
+  .project { min-width: 0; }
+.project-art { aspect-ratio: 1.18 / 1; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+  .project-art.finance { background: var(--green); color: var(--white); }
+  .project-art.cafe { background: var(--lime); color: var(--green); }
+  .project-art.branding { background: #f1f2ec; color: var(--green); border: 1px solid #e3e6df; }
+  .project-art.video { background: var(--green); color: var(--lime); }
+  .art-label { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 800; }
+  .art-title { font-size: clamp(1.45rem, 4vw, 3rem); line-height: .95; letter-spacing: -.06em; font-weight: 850; max-width: 95%; }
+  .project h3 { font-size: 1.1rem; margin: 12px 0 5px; }
+  .project p { color: var(--muted); font-size: .92rem; line-height: 1.5; margin-bottom: 0; }
+  .note { color: var(--muted); font-size: .82rem; margin-top: 20px; line-height: 1.5; }
+  .contact { background: var(--green); color: var(--white); }
+  .contact .eyebrow { color: var(--lime); }
+  .contact h2 { max-width: 800px; }
+  .contact-copy { max-width: 620px; line-height: 1.65; color: #f0f4f0; margin-bottom: 26px; }
+  .contact .btn { border-color: var(--lime); }
+  .contact .btn-lime { background: var(--lime); color: var(--green); }
+  footer { background: var(--green); color: #dbe7dc; border-top: 1px solid #ffffff30; padding: 20px clamp(20px, 6vw, 80px); }
+  .footer-inner { width: min(100%, 1120px); margin: 0 auto; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: .82rem; }
+  @media (min-width: 900px) {
+    .hero { min-height: 78vh; }
+    .services, .work, .contact { padding-top: 90px; padding-bottom: 90px; }
+  }
+  @media (max-width: 640px) {
+    body { padding-top: 0 !important; }
+    .site-header { position: relative !important; top: auto !important; left: auto !important; right: auto !important; height: 58px; padding: 14px 18px; }
+    .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
+    .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 12px 18px 18px; background: var(--green); flex-direction: column; align-items: stretch; gap: 0; box-shadow: 0 12px 18px #0002; }
+    .nav.open { display: flex; }
+    .nav a { padding: 13px 4px; border-top: 1px solid #ffffff22; font-size: .95rem; }
+    .hero { min-height: auto; padding-top: 68px; padding-bottom: 70px; }
+    h1 { font-size: clamp(2.8rem, 13vw, 4.4rem); }
+    section { padding: 52px 20px; }
+    .service-grid, .work-grid { grid-template-columns: 1fr; }
+    .service-card { min-height: 125px; }
+    .project-art { aspect-ratio: 1.25 / 1; }
+    .actions { flex-direction: column; align-items: stretch; }
+    .actions .btn { width: 100%; }
+    .footer-inner { flex-direction: column; }
+  }
+
+  .cover-project { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: 14px; overflow: hidden; background: #ffffff; cursor: pointer; aspect-ratio: 1 / 1; text-align: left; }
+  .cover-project img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform .25s ease; }
+  .cover-project:hover img, .cover-project:focus-visible img { transform: scale(1.035); }
+  .cover-overlay { position: absolute; inset: auto 0 0; padding: 22px 18px 17px; display: flex; flex-direction: column; gap: 8px; color: #fff; background: linear-gradient(transparent, rgba(10,25,18,.88)); }
+  .cover-overlay .art-label { color: var(--lime); }
+  .cover-overlay strong { font-size: clamp(1.1rem, 2.4vw, 1.5rem); letter-spacing: -.03em; }
+  .text-link { border: 0; background: transparent; color: var(--green); text-decoration: underline; text-underline-offset: 3px; font: inherit; font-weight: 750; padding: 10px 0 0; cursor: pointer; }
+  .gallery-dialog { position: fixed; inset: 0; z-index: 100; display: none; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; border-radius: 0; color: var(--green); background: rgba(8, 24, 15, .82); overflow: auto; }
+  .gallery-dialog:target { display: block; }
+  .gallery-panel { width: min(960px, calc(100% - 24px)); margin: 4vh auto; border-radius: 18px; overflow: hidden; background: var(--white); box-shadow: 0 24px 80px #0006; }
+  .gallery-head { position: sticky; top: 0; z-index: 2; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 20px 22px; background: var(--lime); }
+  .gallery-head h2 { font-size: clamp(1.45rem, 4vw, 2.25rem); margin: 0 0 6px; }
+  .gallery-head p { margin: 0; font-size: .92rem; line-height: 1.4; }
+  .gallery-close { flex: 0 0 auto; width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: var(--green); color: #fff; font-size: 1.35rem; text-decoration: none; cursor: pointer; }
+  .gallery-body { padding: 18px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 16px; }
+  .gallery-item { margin: 0; min-width: 0; }
+  .gallery-item img { width: 100%; height: auto; display: block; border-radius: 10px; background: #f2f4ef; }
+  .gallery-item figcaption { padding: 9px 2px 2px; font-size: .88rem; font-weight: 700; }
+  @media (max-width: 640px) {
+    .gallery-panel { width: calc(100% - 16px); margin: 8px auto; border-radius: 14px; }
+    .gallery-head { padding: 16px; }
+    .gallery-body { padding: 12px; }
+    .gallery-grid { grid-template-columns: 1fr; gap: 18px; }
+    .gallery-item img { width: 100%; max-width: 520px; margin: 0 auto; }
+    .cover-overlay { padding: 16px 14px 13px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .01ms !important; }
+  }
+
+/* Creative orbit services section */
+.services .section-inner { max-width: 1180px; }
+.service-orbit {
+  position: relative; isolation: isolate; min-height: 610px; margin-top: 38px;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+  align-items: center; gap: 26px 38px; padding: 72px 6.5%;
+}
+.orbit-ring {
+  position: absolute; z-index: -1; left: 50%; top: 50%; border: 1px solid rgba(27,78,47,.23);
+  border-radius: 50%; transform: translate(-50%,-50%); pointer-events: none;
+}
+.orbit-ring-one { width: min(57vw, 610px); aspect-ratio: 1; }
+.orbit-ring-two { width: min(43vw, 460px); aspect-ratio: 1; border-style: dashed; opacity: .65; animation: orbit-spin 42s linear infinite; }
+.orbit-core {
+  position: absolute; z-index: 2; width: 224px; aspect-ratio: 1; left: 50%; top: 50%;
+  transform: translate(-50%,-50%); border-radius: 50%; background: var(--green); color: var(--white);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  padding: 22px; box-shadow: 0 18px 50px rgba(27,78,47,.2); border: 9px solid var(--lime);
+}
+.core-kicker { font-size: .62rem; font-weight: 800; letter-spacing: .17em; color: var(--lime); margin-bottom: 12px; }
+.orbit-core strong { font-size: 1.35rem; line-height: .98; letter-spacing: -.055em; }
+.core-note { font-size: .7rem; margin-top: 10px; opacity: .8; }
+.core-spark { position: absolute; right: 15px; top: 13px; font-size: 1.25rem; color: var(--lime); }
+.orbit-service {
+  position: relative; z-index: 3; width: min(100%, 340px); min-height: 170px; padding: 24px 26px;
+  border-radius: 18px; background: var(--white); color: var(--green);
+  border: 1px solid rgba(27,78,47,.09); box-shadow: 0 12px 32px rgba(27,78,47,.075);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.orbit-service:hover { transform: translateY(-6px) rotate(-.5deg); box-shadow: 0 18px 38px rgba(27,78,47,.13); }
+.orbit-service-one { justify-self: start; align-self: start; }
+.orbit-service-two { justify-self: end; align-self: start; }
+.orbit-service-three { justify-self: start; align-self: end; }
+.orbit-service-four { justify-self: end; align-self: end; }
+.orbit-number { display: flex; align-items: center; gap: 9px; font-size: .66rem; font-weight: 850; letter-spacing: .13em; color: #477a54; margin-bottom: 18px; }
+.orbit-number i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #b5d900; }
+.orbit-service h3 { font-size: clamp(1.18rem, 2vw, 1.65rem); line-height: 1.02; letter-spacing: -.045em; margin: 0 0 10px; }
+.orbit-service p { font-size: .82rem; line-height: 1.45; margin: 0; color: #66806c; max-width: 245px; }
+.orbit-caption { position: absolute; left: 50%; transform: translateX(-50%); font-size: .62rem; font-weight: 850; letter-spacing: .18em; color: rgba(27,78,47,.65); white-space: nowrap; }
+.orbit-caption-top { top: 8px; }
+.orbit-caption-bottom { bottom: 8px; }
+@keyframes orbit-spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+@media (max-width: 760px) {
+  .service-orbit { min-height: 0; margin-top: 28px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .orbit-ring, .orbit-caption { display: none; }
+  .orbit-core { position: relative; left: auto; top: auto; transform: none; grid-column: 1 / -1; width: 166px; margin: 0 auto 8px; border-width: 7px; }
+  .orbit-core strong { font-size: 1.05rem; }
+  .core-kicker { font-size: .52rem; margin-bottom: 8px; }
+  .core-note { font-size: .61rem; margin-top: 7px; }
+  .core-spark { font-size: 1rem; right: 11px; top: 9px; }
+  .orbit-service { width: 100%; min-height: 156px; padding: 18px 15px; border-radius: 15px; }
+  .orbit-number { font-size: .57rem; letter-spacing: .09em; margin-bottom: 14px; }
+  .orbit-service h3 { font-size: clamp(1rem, 4.5vw, 1.3rem); }
+  .orbit-service p { font-size: .73rem; }
+}
+@media (max-width: 390px) {
+  .service-orbit { grid-template-columns: 1fr; gap: 10px; }
+  .orbit-core { grid-column: 1; width: 154px; }
+  .orbit-service { min-height: auto; padding: 17px 18px; }
+  .orbit-service h3 br { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-ring-two { animation: none; }
+  .orbit-service { transition: none; }
+}
+
+
+
+
+/* Clean portrait focus with deep-green brand border */
+.orbit-core {
+  overflow: visible;
+  background: var(--green);
+  border: 10px solid var(--green);
+  box-shadow: 0 0 0 7px var(--lime), 0 18px 48px rgba(27,78,47,.20);
+}
+.orbit-portrait {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 50%;
+  z-index: 1;
+  filter: none;
+}
+.orbit-core::after { display: none; }
+.orbit-core > :not(.orbit-portrait) { display: none !important; }
+@media (max-width: 760px) {
+  .orbit-core { border-width: 8px; }
+}
+@media (max-width: 390px) {
+  .orbit-core { border-width: 8px; }
+}
+
+
+/* Karen's custom homepage hero — supplied artwork, responsive reflow */
+.karen-hero {
+  display: block; min-height: 0; padding: clamp(16px, 2.4vw, 34px) 0 38px;
+  background: var(--lime); overflow: hidden;
+}
+.karen-hero-art { width: 100%; max-width: 1920px; margin: 0 auto; }
+.karen-hero-desktop { display: block; width: 100%; height: auto; object-fit: contain; }
+.karen-hero-mobile-visual, .karen-hero-mobile-copy { display: none; }
+.karen-hero-actions {
+  width: min(100% - 40px, 1500px); margin: 0 auto; display: flex; align-items: center;
+  flex-wrap: wrap; gap: 12px; padding: 0 0 4px;
+}
+.karen-hero-note { margin-left: auto; font-size: .72rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.karen-hero .btn { min-height: 48px; }
+@media (max-width: 760px) {
+  .karen-hero { padding: 0 0 30px; }
+  .karen-hero-desktop { display: none; }
+  .karen-hero-art {
+    display: flex; flex-direction: column; width: 100%; padding: 34px 20px 0;
+    background: var(--lime);
+  }
+  .karen-hero-mobile-copy { display: block; position: relative; z-index: 2; }
+  .karen-hero-mobile-copy .eyebrow { font-size: .65rem; margin-bottom: 15px; }
+  .karen-hero-mobile-copy h1 {
+    font-size: clamp(2.65rem, 11.5vw, 4.25rem); line-height: .91; letter-spacing: -.065em;
+    max-width: 620px; margin-bottom: 17px;
+  }
+  .karen-hero-mobile-copy p:not(.eyebrow) {
+    font-size: .98rem; line-height: 1.55; max-width: 34rem; margin-bottom: 0;
+  }
+  .karen-hero-mobile-visual {
+    display: block; width: min(100%, 460px); height: clamp(285px, 83vw, 390px);
+    align-self: center; margin: 6px auto 0;
+    background-image: url("assets/image-001.png");
+    background-repeat: no-repeat; background-size: contain; background-position: center bottom;
+  }
+  .karen-hero-actions {
+    width: auto; margin: 0 20px; padding: 18px 0 0; gap: 10px;
+  }
+  .karen-hero-actions .btn { flex: 1 1 145px; padding: 12px 13px; font-size: .76rem; min-height: 46px; }
+  .karen-hero-note { flex: 1 0 100%; margin: 7px 0 0; font-size: .62rem; }
+}
+@media (max-width: 380px) {
+  .karen-hero-actions { flex-direction: column; align-items: stretch; }
+  .karen-hero-actions .btn { width: 100%; }
+}
+
+/* Mobile correction: show the complete original hero artwork once, without a second copy */
+@media (max-width: 760px) {
+  .karen-hero {
+    padding: 0 0 26px !important;
+    overflow: visible;
+  }
+  .karen-hero-art {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    background: var(--lime) !important;
+  }
+  .karen-hero-desktop {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+  }
+  .karen-hero-mobile-visual,
+  .karen-hero-mobile-copy {
+    display: none !important;
+  }
+  .karen-hero-actions {
+    width: auto !important;
+    margin: 0 20px !important;
+    padding: 18px 0 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    align-items: stretch !important;
+  }
+  .karen-hero-actions .btn {
+    flex: 1 1 145px !important;
+    min-height: 48px !important;
+    padding: 12px 13px !important;
+    font-size: .76rem !important;
+  }
+  .karen-hero-note {
+    flex: 1 0 100% !important;
+    margin: 5px 0 0 !important;
+    font-size: .62rem !important;
+  }
+}
+@media (max-width: 380px) {
+  .karen-hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .karen-hero-actions .btn { width: 100% !important; }
+}
+
+
+/* Refined platform/tool logo tiles: clean white artwork from the user's updated reference */
+.platform-tool-card {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
+  transition: transform .22s cubic-bezier(.2,.8,.2,1), filter .22s ease !important;
+}
+.platform-tool-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none !important;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 7px rgba(27,78,47,.07);
+  transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease !important;
+}
+.platform-tool-card:hover,
+.platform-tool-card:focus,
+.platform-tool-card:focus-visible {
+  z-index: 5;
+  transform: scale(1.065) !important;
+  filter: saturate(1.04);
+}
+.platform-tool-card:hover img,
+.platform-tool-card:focus img,
+.platform-tool-card:focus-visible img {
+  box-shadow: 0 12px 26px rgba(27,78,47,.18);
+}
+.platform-tool-card:active {
+  z-index: 6;
+  transform: scale(1.11) !important;
+}
+.platform-tool-card:active img {
+  box-shadow: 0 15px 30px rgba(27,78,47,.22);
+}
+@media (prefers-reduced-motion: reduce) {
+  .platform-tool-card, .platform-tool-card img { transition: none !important; }
+}
+
+
+/* Click-to-enlarge project artwork: readable desktop and mobile lightbox */
+.gallery-item img {
+  cursor: zoom-in;
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+  transform-origin: center;
+}
+.gallery-item img:hover, .gallery-item img:focus-visible {
+  transform: scale(1.025);
+  box-shadow: 0 12px 28px rgba(27,78,47,.22);
+  filter: saturate(1.04);
+  outline: none;
+}
+.gallery-item img:active { transform: scale(1.01); }
+.project-image-lightbox {
+  position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center;
+  padding: 24px; background: rgba(8, 24, 15, .94); opacity: 0; visibility: hidden;
+  transition: opacity .22s ease, visibility .22s ease;
+}
+.project-image-lightbox.is-open { opacity: 1; visibility: visible; }
+.project-image-lightbox__frame {
+  position: relative; width: min(1200px, 96vw); height: min(92vh, 1000px); display: flex;
+  align-items: center; justify-content: center; flex-direction: column; gap: 10px;
+  transform: scale(.94); transition: transform .24s ease;
+}
+.project-image-lightbox.is-open .project-image-lightbox__frame { transform: scale(1); }
+.project-image-lightbox__image {
+  display: block; max-width: 100%; max-height: calc(92vh - 52px); width: auto; height: auto;
+  object-fit: contain; border-radius: 8px; box-shadow: 0 18px 65px rgba(0,0,0,.42); background: #fff;
+}
+.project-image-lightbox__caption { max-width: 95%; color: #fff; text-align: center; font-size: .95rem; line-height: 1.35; }
+.project-image-lightbox__close {
+  position: absolute; top: -8px; right: -8px; z-index: 2; width: 46px; height: 46px; border: 2px solid #eafe1f;
+  border-radius: 50%; background: #1b4e2f; color: #fff; font-size: 30px; line-height: 1; cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,.35);
+}
+@media (max-width: 640px) {
+  .project-image-lightbox { padding: 12px; }
+  .project-image-lightbox__frame { width: 100%; height: 94vh; }
+  .project-image-lightbox__image { max-width: 100%; max-height: calc(94vh - 56px); border-radius: 6px; }
+  .project-image-lightbox__close { top: 0; right: 0; width: 42px; height: 42px; }
+  .project-image-lightbox__caption { font-size: .85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item img, .project-image-lightbox, .project-image-lightbox__frame { transition: none !important; }
+}
+
+
+  /* Consistent minimal northeast arrow for clickable links and buttons */
+  .link-arrow { display:inline-flex; align-items:center; justify-content:center; font-family:Arial,Helvetica,sans-serif; font-size:1.08em; font-weight:400; line-height:1; letter-spacing:0; transform:translateY(-.02em); transition:transform .18s ease; }
+  a:hover .link-arrow, a:focus-visible .link-arrow { transform:translate(2px,-2px); }
+  @media (prefers-reduced-motion:reduce) { .link-arrow { transition:none; } a:hover .link-arrow, a:focus-visible .link-arrow { transform:none; } }
+
+/* Ten-step process cards: detailed, readable, and responsive */
+.service-listing .process-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+.service-listing .process-card {
+  min-height: 0;
+  padding: clamp(20px, 2.4vw, 30px);
+  background: #fbfff0;
+  border: 1px solid rgba(27,78,47,.14);
+  box-shadow: 0 10px 28px rgba(27,78,47,.07);
+}
+.service-listing .process-card h4 {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+.process-checklist {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.process-checklist li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  color: #526e59;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+.process-checklist li > span:first-child {
+  color: #1b4e2f;
+  font-weight: 900;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+@media (max-width: 760px) {
+  .service-listing .process-grid { grid-template-columns: 1fr; gap: 12px; }
+  .service-listing .process-card { padding: 19px 18px; }
+  .service-listing .process-card h4 { font-size: 1.05rem; margin-bottom: 13px; }
+  .process-checklist { gap: 9px; }
+  .process-checklist li { font-size: .88rem; line-height: 1.48; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-listing .process-card { transition: none; }
+}
+
+
+/* Live results showcase — inserted after process step 10; scoped to this section only */
+.live-results-showcase {
+  --lr-bg: #102b20;
+  --lr-panel: #173d2c;
+  --lr-lime: #eafe1f;
+  --lr-white: #f8fff9;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 560px;
+  padding: clamp(76px, 9vw, 132px) clamp(22px, 7vw, 100px);
+  color: var(--lr-white);
+  background:
+    radial-gradient(ellipse at 82% 18%, rgba(234,254,31,.13), transparent 38%),
+    radial-gradient(ellipse at 12% 90%, rgba(69,210,183,.10), transparent 34%),
+    var(--lr-bg);
+}
+.live-results-showcase .lr-inner { max-width: 1240px; margin: 0 auto; position: relative; z-index: 2; }
+.live-results-showcase .lr-kicker {
+  margin: 0 0 18px; color: var(--lr-lime); font-size: .76rem; font-weight: 800;
+  letter-spacing: .16em; text-transform: uppercase;
+}
+.live-results-showcase .lr-headline {
+  max-width: 950px; margin: 0; color: var(--lr-white);
+  font-size: clamp(2.5rem, 6.6vw, 6.2rem); line-height: .99;
+  letter-spacing: -.065em; font-weight: 850;
+}
+.live-results-showcase .lr-headline .lr-gradient {
+  background: linear-gradient(100deg, #eafe1f 0%, #69e6c3 52%, #a89bff 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.live-results-showcase .lr-subcopy {
+  max-width: 650px; margin: 24px 0 0; color: rgba(248,255,249,.78);
+  font-size: clamp(1rem, 1.35vw, 1.15rem); line-height: 1.65;
+}
+.live-results-showcase .lr-metrics {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px); margin: clamp(48px, 6vw, 76px) 0 42px;
+  align-items: stretch;
+}
+.live-results-showcase .lr-card {
+  min-height: 156px; padding: clamp(22px, 3vw, 34px);
+  border: 1px solid rgba(234,254,31,.32); border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255,255,255,.095), rgba(255,255,255,.035));
+  box-shadow: 0 18px 55px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.09);
+  backdrop-filter: blur(10px);
+  animation: lr-float 5.8s ease-in-out infinite;
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+.live-results-showcase .lr-card:nth-child(2) { animation-delay: -1.9s; }
+.live-results-showcase .lr-card:nth-child(3) { animation-delay: -3.8s; }
+.live-results-showcase .lr-card:hover {
+  transform: translateY(-12px) scale(1.035);
+  border-color: var(--lr-lime);
+  box-shadow: 0 24px 65px rgba(0,0,0,.28), 0 0 30px rgba(234,254,31,.12);
+  animation-play-state: paused;
+}
+.live-results-showcase .lr-value {
+  display: block; margin: 0 0 10px; color: var(--lr-lime);
+  font-size: clamp(2rem, 3.8vw, 3.4rem); line-height: 1;
+  font-weight: 850; letter-spacing: -.055em;
+}
+.live-results-showcase .lr-label { margin: 0; color: var(--lr-white); font-size: 1rem; line-height: 1.35; font-weight: 650; }
+.live-results-showcase .lr-note { margin: 12px 0 0; color: rgba(248,255,249,.56); font-size: .78rem; line-height: 1.45; }
+.live-results-showcase .lr-button {
+  display: inline-flex; align-items: center; gap: 22px; min-height: 54px;
+  padding: 0 24px; border-radius: 999px; background: var(--lr-lime);
+  color: #173d2c; text-decoration: none; font-weight: 850; font-size: .9rem;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.live-results-showcase .lr-button:hover,
+.live-results-showcase .lr-button:focus-visible {
+  transform: scale(1.06); box-shadow: 0 12px 34px rgba(234,254,31,.2);
+}
+.live-results-showcase .lr-button-arrow { font-size: 1.2rem; font-weight: 400; }
+.live-results-showcase .lr-glow {
+  position: absolute; z-index: 1; width: 320px; height: 320px; border-radius: 50%;
+  pointer-events: none; opacity: 0; transform: translate(-50%,-50%);
+  background: radial-gradient(circle, rgba(107,225,198,.16), rgba(168,155,255,.07) 42%, transparent 72%);
+  transition: opacity .25s ease;
+}
+.live-results-showcase.lr-cursor-active .lr-glow { opacity: 1; }
+.live-results-showcase.lr-reveal .lr-reveal-item {
+  opacity: 0; transform: translateY(30px); transition: opacity .85s ease, transform .85s cubic-bezier(.2,.7,.2,1);
+}
+.live-results-showcase.lr-reveal.lr-visible .lr-reveal-item { opacity: 1; transform: translateY(0); }
+.live-results-showcase.lr-visible .lr-reveal-item:nth-child(2) { transition-delay: .12s; }
+.live-results-showcase.lr-visible .lr-reveal-item:nth-child(3) { transition-delay: .24s; }
+.live-results-showcase.lr-visible .lr-reveal-item:nth-child(4) { transition-delay: .36s; }
+@keyframes lr-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@media (max-width: 760px) {
+  .live-results-showcase { min-height: 0; padding: 68px 22px 76px; }
+  .live-results-showcase .lr-headline { font-size: clamp(2.45rem, 11vw, 4rem); }
+  .live-results-showcase .lr-metrics { grid-template-columns: 1fr; gap: 14px; margin: 36px 0 30px; }
+  .live-results-showcase .lr-card { min-height: 126px; padding: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-results-showcase *, .live-results-showcase *::before, .live-results-showcase *::after {
+    animation: none !important; transition: none !important; scroll-behavior: auto !important;
+  }
+  .live-results-showcase.lr-reveal .lr-reveal-item { opacity: 1; transform: none; }
+}
+
+
+
+/* Impact headline above the PFC dashboard — scoped to this section only */
+.pfc-live-dashboard .pfc-impact-headline {
+  max-width: 1080px;
+  margin: 0 0 clamp(22px, 3vw, 38px);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: clamp(2rem, 4.35vw, 4.15rem);
+  font-weight: 850;
+  line-height: .99;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+.pfc-live-dashboard .pfc-impact-headline span {
+  background: linear-gradient(100deg, #eafe1f 0%, #69e6c3 54%, #a89bff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@media (max-width: 700px) {
+  .pfc-live-dashboard .pfc-impact-headline {
+    max-width: 100%;
+    font-size: clamp(1.85rem, 7.2vw, 2.65rem);
+    line-height: 1.04;
+    letter-spacing: -.045em;
+    margin-bottom: 22px;
+  }
+}
+
+/* PFC live analytics dashboard — branded green/lime treatment, isolated to this section */
+.live-results-showcase.pfc-live-dashboard {
+  --lr-bg: #1b4e2f;
+  --lr-panel: #153f29;
+  --lr-lime: #eafe1f;
+  --lr-white: #ffffff;
+  min-height: 0;
+  padding: clamp(44px, 6vw, 78px) clamp(18px, 4vw, 58px);
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 88% 12%, rgba(234,254,31,.13), transparent 34%),
+    radial-gradient(ellipse at 8% 88%, rgba(80,210,177,.12), transparent 36%),
+    #1b4e2f;
+}
+.pfc-live-dashboard .lr-inner { max-width: 1180px; }
+.pfc-dashboard-top { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:18px; }
+.pfc-dashboard-label, .pfc-dashboard-status {
+  display:inline-flex; align-items:center; gap:9px; min-height:32px; padding:0 13px;
+  border:1px solid rgba(234,254,31,.28); border-radius:999px; background:rgba(8,39,24,.62);
+  color:#fff; font-size:.76rem; font-weight:750; letter-spacing:.035em;
+}
+.pfc-dashboard-label i { width:8px; height:8px; border-radius:50%; background:#eafe1f; box-shadow:0 0 12px rgba(234,254,31,.7); }
+.pfc-dashboard-status { color:#eaf4e9; border-color:rgba(255,255,255,.16); background:rgba(8,39,24,.48); }
+.pfc-dashboard-status span { color:#b9c7ff; font-size:1rem; }
+.pfc-chart-panel {
+  padding:clamp(18px, 3vw, 30px) clamp(16px, 2.8vw, 30px) 18px;
+  border:1px solid rgba(234,254,31,.22); border-radius:22px;
+  background:linear-gradient(145deg, rgba(21,63,41,.98), rgba(11,48,30,.98));
+  box-shadow:0 22px 60px rgba(4,25,14,.22), inset 0 1px 0 rgba(255,255,255,.07);
+}
+.pfc-chart-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:18px; }
+.pfc-chart-eyebrow { margin:0 0 8px; color:#eafe1f; font-size:.72rem; font-weight:800; letter-spacing:.12em; }
+.pfc-chart-heading h2 { margin:0; color:#eafe1f; font-size:clamp(2rem,4vw,3.15rem); line-height:1; letter-spacing:-.055em; font-weight:850; }
+.pfc-chart-heading h2 span { color:#fff; font-size:.42em; font-weight:600; letter-spacing:-.02em; }
+.pfc-chart-comparison { margin:10px 0 0; color:rgba(255,255,255,.82); font-size:.88rem; }
+.pfc-chart-comparison strong { color:#eafe1f; font-weight:850; }
+.pfc-chart-period { flex:none; color:rgba(255,255,255,.75); font-size:.68rem; font-weight:750; letter-spacing:.08em; padding-top:5px; }
+.pfc-chart-wrap { position:relative; height:clamp(170px, 25vw, 255px); margin-top:16px; }
+.pfc-performance-chart { display:block; width:100%; height:100%; overflow:visible; }
+.pfc-chart-grid path { fill:none; stroke:rgba(255,255,255,.15); stroke-width:1; stroke-dasharray:4 8; }
+.pfc-chart-area { fill:url(#pfcAreaGradient); }
+.pfc-chart-line { fill:none; stroke:url(#pfcLineGradient); stroke-width:4; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1500; stroke-dashoffset:1500; animation:pfc-draw-line 2.2s cubic-bezier(.2,.7,.2,1) .25s forwards; }
+.pfc-chart-point { fill:#eafe1f; stroke:#1b4e2f; stroke-width:4; }
+.pfc-chart-point-end { fill:#fff; stroke:#55d8c2; }
+.pfc-chart-point-pulse { fill:none; stroke:rgba(234,254,31,.65); stroke-width:2; animation:pfc-pulse 2s ease-out infinite; }
+.pfc-chart-tag { position:absolute; padding:7px 10px; border:1px solid rgba(234,254,31,.22); border-radius:7px; background:rgba(8,39,24,.9); color:#fff; font-size:.7rem; font-weight:700; white-space:nowrap; }
+.pfc-chart-tag-start { left:2%; bottom:2%; }
+.pfc-chart-tag-end { right:2%; top:0; color:#eafe1f; border-color:rgba(234,254,31,.4); }
+.pfc-chart-axis { display:flex; justify-content:space-between; gap:12px; color:rgba(255,255,255,.64); font-size:.62rem; font-weight:750; letter-spacing:.08em; }
+.live-results-showcase.pfc-live-dashboard .lr-metrics {
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:18px 0 0;
+}
+.live-results-showcase.pfc-live-dashboard .lr-card {
+  min-width:0; min-height:0; padding:17px 18px 16px; border-radius:16px;
+  border:1px solid rgba(234,254,31,.23);
+  background:linear-gradient(145deg, rgba(22,75,47,.98), rgba(12,57,35,.98));
+  box-shadow:0 12px 30px rgba(4,25,14,.17), inset 0 1px 0 rgba(255,255,255,.06);
+  animation-duration:6.5s;
+}
+.live-results-showcase.pfc-live-dashboard .lr-card:first-child { border-color:rgba(85,216,194,.55); }
+.live-results-showcase.pfc-live-dashboard .lr-card:nth-child(2) { border-color:rgba(185,154,255,.42); }
+.live-results-showcase.pfc-live-dashboard .lr-card:nth-child(3) { border-color:rgba(234,254,31,.45); }
+.live-results-showcase.pfc-live-dashboard .lr-card:nth-child(4) { border-color:rgba(85,216,194,.38); }
+.pfc-card-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; color:rgba(255,255,255,.82); font-size:.72rem; font-weight:750; }
+.pfc-card-icon { font-size:1rem; font-weight:900; }
+.pfc-icon-cyan { color:#55d8c2; } .pfc-icon-violet { color:#c4a6ff; } .pfc-icon-lime { color:#eafe1f; }
+.live-results-showcase.pfc-live-dashboard .lr-value { display:block; margin:0 0 7px; color:#eafe1f; font-size:clamp(1.5rem,2.25vw,2rem); letter-spacing:-.045em; line-height:1.08; }
+.live-results-showcase.pfc-live-dashboard .lr-label { color:#fff; font-size:.82rem; }
+.live-results-showcase.pfc-live-dashboard .lr-note { margin-top:7px; color:rgba(255,255,255,.68); font-size:.69rem; line-height:1.45; }
+.pfc-dashboard-footnote { margin:16px 2px 0; color:rgba(255,255,255,.64); font-size:.68rem; line-height:1.5; }
+@keyframes pfc-draw-line { to { stroke-dashoffset:0; } }
+@keyframes pfc-pulse { 0% { transform:scale(.7); opacity:.9; } 100% { transform:scale(1.8); opacity:0; } }
+@media (max-width:980px) {
+  .live-results-showcase.pfc-live-dashboard .lr-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:760px) {
+  .live-results-showcase.pfc-live-dashboard { padding:48px 15px 54px; }
+  .pfc-dashboard-top { align-items:flex-start; flex-direction:column; gap:8px; }
+  .pfc-dashboard-label, .pfc-dashboard-status { font-size:.65rem; min-height:29px; }
+  .pfc-chart-panel { border-radius:16px; padding:17px 13px 14px; }
+  .pfc-chart-heading { flex-direction:column; gap:10px; }
+  .pfc-chart-period { padding:0; }
+  .pfc-chart-wrap { height:190px; margin-top:20px; }
+  .pfc-chart-tag { font-size:.58rem; padding:6px 7px; }
+  .pfc-chart-axis { font-size:.52rem; }
+  .live-results-showcase.pfc-live-dashboard .lr-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .live-results-showcase.pfc-live-dashboard .lr-card { padding:15px 13px; }
+  .live-results-showcase.pfc-live-dashboard .lr-note { font-size:.64rem; }
+}
+@media (max-width:390px) {
+  .live-results-showcase.pfc-live-dashboard .lr-metrics { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .pfc-chart-line { animation:none; stroke-dashoffset:0; }
+  .pfc-chart-point-pulse { animation:none; }
+}
+
+/* Podcast, Video Repurposing and Reels project */
+  .podcast-gallery-panel { width: min(1080px, calc(100% - 24px)); }
+  .podcast-gallery-intro {
+    padding: 16px 18px; margin-bottom: 18px; border-radius: 12px;
+    background: var(--green); color: #fff;
+  }
+  .podcast-gallery-intro .art-label { color: var(--lime); }
+  .podcast-gallery-intro p { margin: 7px 0 0; color: #eaf1e9; line-height: 1.5; }
+  .podcast-video-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .podcast-video-card {
+    min-width: 0; overflow: hidden; border: 1px solid rgba(27,78,47,.16);
+    border-radius: 14px; background: #fff; box-shadow: 0 8px 24px rgba(27,78,47,.08);
+  }
+  .podcast-video-thumb { display: block; position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #102d20; }
+  .podcast-video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+  .podcast-video-thumb:hover img, .podcast-video-thumb:focus-visible img { transform: scale(1.06); }
+  .podcast-play {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    width: 48px; height: 48px; display: grid; place-items: center; padding-left: 3px;
+    border-radius: 50%; background: var(--lime); color: var(--green); font-size: 1.1rem;
+    box-shadow: 0 4px 18px #0005;
+  }
+  .podcast-video-copy { padding: 14px; }
+  .podcast-video-number { color: #5b765f; font-size: .68rem; font-weight: 850; letter-spacing: .12em; }
+  .podcast-video-copy h3 { margin: 7px 0 5px; color: var(--green); font-size: 1rem; line-height: 1.25; }
+  .podcast-video-copy p { margin: 0 0 12px; color: #647568; font-size: .82rem; line-height: 1.4; }
+  .podcast-watch-link { display: inline-flex; gap: 7px; align-items: center; color: var(--green); font-weight: 800; font-size: .84rem; text-decoration: underline; text-decoration-color: var(--lime); text-underline-offset: 4px; }
+  @media (max-width: 760px) { .podcast-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+  @media (max-width: 460px) { .podcast-video-grid { grid-template-columns: 1fr; } .podcast-video-copy { padding: 13px; } }
+\n
+
+/* Featured podcast episodes — aligned with the existing Hey, KingVA! project system */
+.podcast-featured { margin: 4px 0 30px; }
+.podcast-featured-heading { padding: 18px 20px 16px; margin-bottom: 16px; background: #1b4e2f; color: #fff; border-radius: 12px; }
+.podcast-featured-kicker, .podcast-reels-heading span { display:block; color:#eafe1f; font-size:.68rem; font-weight:850; letter-spacing:.14em; }
+.podcast-featured-heading h3 { margin:5px 0 4px; color:#eafe1f; font-size:clamp(1.6rem,3vw,2.25rem); line-height:1; font-weight:900; letter-spacing:-.04em; }
+.podcast-featured-heading p { margin:8px 0 0; color:#eaf1e9; line-height:1.5; font-size:.92rem; }
+.podcast-feature-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.podcast-feature-card { min-width:0; overflow:hidden; border:1px solid rgba(27,78,47,.16); border-radius:14px; background:#fff; box-shadow:0 8px 24px rgba(27,78,47,.08); }
+.podcast-feature-thumb { display:block; position:relative; overflow:hidden; background:#102d20; }
+.podcast-feature-thumb img { display:block; width:100%; height:auto; aspect-ratio:460 / 365; object-fit:cover; transition:transform .35s ease; }
+.podcast-feature-thumb:hover img,.podcast-feature-thumb:focus-visible img { transform:scale(1.035); }
+.podcast-feature-copy { padding:14px 16px 16px; }
+.podcast-feature-copy h3 { margin:7px 0 5px; color:#1b4e2f; font-size:1.04rem; line-height:1.28; font-weight:850; }
+.podcast-feature-copy p { margin:0 0 12px; color:#647568; font-size:.84rem; }
+.podcast-reels-heading { padding:12px 16px; margin:26px 0 15px; border-left:4px solid #eafe1f; background:#1b4e2f; color:#fff; border-radius:0 9px 9px 0; }
+.podcast-reels-heading h3 { margin:4px 0 0; color:#fff; font-size:1.05rem; font-weight:850; }
+@media(max-width:600px) {
+ .podcast-feature-grid { grid-template-columns:1fr; gap:14px; }
+ .podcast-featured-heading { padding:16px; }
+ .podcast-feature-copy { padding:13px; }
+}
+\n
+/* Mobile navigation reliability fix */
+@media (max-width: 640px) {
+  .site-header { position: relative !important; z-index: 1000 !important; }
+  .menu-toggle { position: relative; z-index: 1002; cursor: pointer; }
+  #siteNav { z-index: 1001; }
+  #siteNav.open { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+}
+
+</style>
+<style>
+
+/* Exact supplied homepage artwork; only the hero image and its two CTA click areas are changed. */
+.karen-hero-art { position: relative; width: 100%; max-width: 1920px; margin: 0 auto; }
+.karen-hero-desktop { display: block; width: 100%; height: auto; object-fit: contain; }
+.karen-hero-actions { display: none !important; }
+.karen-hero-image-link {
+  position: absolute; z-index: 5; top: 82.1%; height: 11.8%;
+  display: block; border-radius: 14px; background: transparent;
+  text-indent: -9999px; overflow: hidden;
+}
+.karen-hero-image-link--work { left: 42.2%; width: 20.7%; }
+.karen-hero-image-link--contact { left: 64.0%; width: 20.7%; }
+.karen-hero-image-link:focus-visible { outline: 3px solid #ffffff; outline-offset: -5px; }
+@media (max-width: 760px) {
+  .karen-hero { padding: 0 0 30px; }
+  .karen-hero-art { width: 100%; padding: 0; }
+  .karen-hero-desktop { display: block; width: 100%; height: auto; }
+  .karen-hero-image-link { border-radius: 8px; }
+}
+
+</style>
+<style id="mobile-hero-artwork-only">
+.karen-hero-mobile-image { display: none; }
+@media (max-width: 760px) {
+  .karen-hero { padding: 0 0 24px !important; background: var(--lime); }
+  .karen-hero-desktop, .karen-hero-mobile-copy, .karen-hero-mobile-visual, .karen-hero-actions { display: none !important; }
+  .karen-hero-mobile-image { display: block !important; width: 100%; height: auto; max-width: none; margin: 0; object-fit: contain; }
+  .karen-hero-art { display: block !important; width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; background: var(--lime); }
+}
+
+/* Mobile homepage: use the supplied 390 x 844 artwork only on small screens.
+   Desktop artwork and desktop CTA layout are intentionally untouched. */
+.karen-hero-mobile-reference, .karen-mobile-hotspot { display: none; }
+@media (max-width: 760px) {
+  .karen-hero { padding: 0 !important; margin: 0; background: #EAFE1F !important; overflow: hidden; }
+  .karen-hero-art { position: relative; display: block !important; width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; background: #EAFE1F !important; line-height: 0; }
+  .karen-hero-desktop, .karen-hero-mobile-image, .karen-hero-mobile-visual, .karen-hero-mobile-copy, .karen-hero-actions, .karen-hero-image-link { display: none !important; }
+  .karen-hero-mobile-reference { display: block !important; width: 100%; height: auto; aspect-ratio: 390 / 844; object-fit: contain; margin: 0; }
+  .karen-mobile-hotspot { display: block; position: absolute; z-index: 20; left: 12.8%; width: 74.4%; height: 5.5%; background: transparent; border: 0; border-radius: 16px; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+  .karen-mobile-hotspot--work { top: 76.0%; height: 5.2%; }
+  .karen-mobile-hotspot--contact { top: 82.5%; height: 5.2%; }
+}
+</style>
+<style id="mobile-homepage-latest-user-artwork">
+  /* Latest user-supplied mobile homepage artwork. Desktop hero is not modified. */
+  .karen-hero-mobile-reference, .karen-mobile-hotspot { display: none; }
+  @media (max-width: 760px) {
+    .karen-hero { padding: 0 !important; margin: 0 !important; background: #EAFE1F !important; overflow: hidden; }
+    .karen-hero-art { position: relative !important; display: block !important; width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; background: #EAFE1F !important; line-height: 0; }
+    .karen-hero-desktop, .karen-hero-mobile-image, .karen-hero-mobile-visual, .karen-hero-mobile-copy, .karen-hero-actions, .karen-hero-image-link { display: none !important; }
+    .karen-hero-mobile-reference { display: block !important; width: 100% !important; max-width: none !important; height: auto !important; aspect-ratio: 946 / 2048; object-fit: contain; margin: 0 !important; }
+    .karen-mobile-hotspot { display: block !important; position: absolute; z-index: 30; left: 9.1%; width: 81.8%; height: 6.3%; background: transparent; border: 0; border-radius: 18px; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+    .karen-mobile-hotspot--work { top: 77.6%; height: 6.6%; }
+    .karen-mobile-hotspot--contact { top: 84.8%; height: 6.8%; }
+    .karen-mobile-hotspot:focus-visible { outline: 3px solid #174B32; outline-offset: -4px; }
+  }
+
+/* Expanded What I Do service list — desktop and mobile responsive */
+.service-listing { margin: 48px auto 8px; }
+.service-listing-heading { display:flex; align-items:end; justify-content:space-between; gap:24px; margin:0 0 20px; }
+.service-listing-kicker { margin:0 0 8px; color:#477a54; font-size:.68rem; font-weight:850; letter-spacing:.16em; }
+.service-listing-heading h3 { margin:0; color:var(--green); font-size:clamp(1.45rem,2.7vw,2.15rem); line-height:1.05; letter-spacing:-.045em; }
+.service-list-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+.service-detail-card { min-width:0; min-height:160px; padding:20px 17px; border:1px solid rgba(27,78,47,.12); border-radius:16px; background:rgba(255,255,255,.88); box-shadow:0 8px 24px rgba(27,78,47,.055); }
+.service-detail-number { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; margin-bottom:17px; border-radius:50%; background:var(--lime); color:var(--green); font-size:.68rem; font-weight:850; }
+.service-detail-card h4 { margin:0 0 8px; color:var(--green); font-size:.98rem; line-height:1.12; letter-spacing:-.025em; }
+.service-detail-card p { margin:0; color:#66806c; font-size:.76rem; line-height:1.45; }
+@media (max-width:1050px) { .service-list-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (max-width:760px) {
+  .service-listing { margin:34px auto 4px; }
+  .service-listing-heading { display:block; margin-bottom:16px; }
+  .service-list-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+  .service-detail-card { min-height:0; padding:16px 14px; border-radius:14px; }
+  .service-detail-number { width:27px; height:27px; margin-bottom:12px; }
+  .service-detail-card h4 { font-size:.91rem; }
+  .service-detail-card p { font-size:.72rem; }
+}
+@media (max-width:390px) { .service-list-grid { grid-template-columns:1fr; } .service-detail-card { padding:16px 17px; } }
+</style>
+<style>
+/* Section 03 — Platforms & Tools: rebuilt from Karen's latest brand artwork */
+.platforms-section { background:#fff; color:var(--green); overflow:hidden; }
+.platforms-section .section-inner { width:min(100%, 1180px); }
+.platforms-section h2 { max-width:900px; }
+.platforms-section .section-intro { max-width:720px; }
+.platform-group { margin-top:clamp(30px,5vw,54px); }
+.platform-group-heading { display:flex; align-items:baseline; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
+.platform-index { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; background:var(--lime); color:var(--green); font-size:.72rem; font-weight:900; }
+.platform-group-heading h3 { margin:0; color:var(--green); font-size:clamp(1.5rem,3vw,2.2rem); letter-spacing:-.055em; }
+.platform-group-heading p { margin:0 0 0 auto; color:#68806b; font-size:.88rem; }
+.platform-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:clamp(10px,1.5vw,18px); padding:12px; background:#1b4e2f; border-radius:0; }
+.tool-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; padding:16px; background:#eafe1f; border-radius:22px; }
+.platform-tool-card { display:block; min-width:0; padding:0; margin:0; border:0; border-radius:12px; background:transparent; box-shadow:none; text-decoration:none; transform:translateZ(0); transition:transform .22s cubic-bezier(.2,.8,.2,1), filter .22s ease; }
+.platform-tool-card img { display:block; width:100%; height:auto; max-height:none; object-fit:contain; border:0; border-radius:12px; }
+.platform-tool-card:hover { z-index:2; transform:scale(1.075); filter:drop-shadow(0 9px 10px rgba(10,45,25,.24)); }
+.platform-tool-card:active { transform:scale(1.10); filter:drop-shadow(0 10px 12px rgba(10,45,25,.28)); }
+.platform-tool-card:focus-visible { outline:3px solid #f5a000; outline-offset:4px; border-radius:13px; }
+.platform-tools-group { margin-top:clamp(34px,4.5vw,48px); }
+.platform-bottomline { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:36px; padding-top:18px; border-top:1px solid rgba(27,78,47,.16); color:#52745a; font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+@media (max-width:900px) { .platform-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .tool-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (max-width:600px) {
+ .platforms-section .section-inner { padding-left:18px; padding-right:18px; }
+ .platform-group-heading { gap:9px; margin-bottom:13px; }
+ .platform-group-heading p { flex-basis:100%; margin:0 0 0 39px; font-size:.78rem; }
+ .platform-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; padding:9px; }
+ .tool-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; padding:10px; border-radius:16px; }
+ .platform-tool-card, .platform-tool-card img { border-radius:10px; }
+ .platform-bottomline { margin-top:25px; font-size:.66rem; }
+}
+@media (max-width:360px) { .platform-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (prefers-reduced-motion:reduce) { .platform-tool-card { transition:none; } .platform-tool-card:hover,.platform-tool-card:active { transform:none; filter:none; } }
+
+/* Section 04 — WhatsApp contact */
+.contact-section { background:#1b4e2f; color:#fff; padding:clamp(58px,8vw,112px) 24px; scroll-margin-top:82px; }
+.contact-inner { width:min(1160px,100%); margin:0 auto; display:grid; grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr); align-items:center; gap:clamp(34px,7vw,92px); }
+.contact-section .eyebrow { color:#eafe1f; }
+.contact-copy h2 { color:#eafe1f; font-size:clamp(2.2rem,5.2vw,4.7rem); line-height:.99; letter-spacing:-.055em; max-width:760px; margin:12px 0 22px; }
+.contact-copy > p:not(.eyebrow):not(.contact-note) { color:#f4fff7; font-size:clamp(1.02rem,1.6vw,1.25rem); line-height:1.65; max-width:650px; margin:0 0 28px; }
+.contact-whatsapp-button { display:inline-flex; align-items:center; justify-content:center; gap:14px; background:#eafe1f; color:#1b4e2f; font-weight:900; text-decoration:none; padding:16px 24px; border-radius:14px; min-height:58px; transition:transform .2s ease, box-shadow .2s ease; box-shadow:0 8px 20px rgba(0,0,0,.15); }
+.contact-whatsapp-button:hover,.contact-whatsapp-button:focus-visible { transform:translateY(-3px) scale(1.025); box-shadow:0 13px 26px rgba(0,0,0,.22); }
+.contact-email { margin:18px 0 0; color:#f4fff7; font-size:1rem; line-height:1.5; }
+.contact-email span { color:#eafe1f; font-weight:800; margin-right:6px; }
+.contact-email a { color:#fff; font-weight:700; text-decoration:underline; text-decoration-color:#eafe1f; text-underline-offset:4px; overflow-wrap:anywhere; }
+.contact-email a:hover,.contact-email a:focus-visible { color:#eafe1f; }
+.contact-note { color:rgba(255,255,255,.78); font-size:.88rem; line-height:1.5; margin-top:18px; }
+.contact-qr-link { width:min(100%,330px); justify-self:center; display:block; padding:14px; background:#eafe1f; border-radius:28px; text-decoration:none; box-shadow:0 18px 40px rgba(0,0,0,.22); transition:transform .22s ease, box-shadow .22s ease; }
+.contact-qr-link:hover,.contact-qr-link:focus-visible { transform:scale(1.045); box-shadow:0 22px 48px rgba(0,0,0,.3); }
+.contact-qr-image { display:block; width:100%; height:auto; border-radius:20px; }
+.contact-qr-caption { display:block; color:#1b4e2f; text-align:center; font-size:.78rem; font-weight:900; letter-spacing:.12em; padding:12px 4px 3px; }
+@media(max-width:700px) { .contact-section { padding:54px 20px 64px; } .contact-inner { grid-template-columns:1fr; gap:30px; text-align:center; } .contact-copy h2 { margin-left:auto; margin-right:auto; } .contact-copy > p:not(.eyebrow):not(.contact-note) { margin-left:auto; margin-right:auto; } .contact-note { max-width:360px; margin-left:auto; margin-right:auto; } .contact-qr-link { width:min(76vw,290px); } .contact-whatsapp-button { width:min(100%,360px); } }
+@media(prefers-reduced-motion:reduce) { .contact-whatsapp-button,.contact-qr-link { transition:none; } .contact-whatsapp-button:hover,.contact-qr-link:hover { transform:none; } }
+</style>
+<style>
+/* Interactive motion for the 01–04 orbit cards and 01–10 process cards */
+.orbit-service,
+.service-listing .process-card {
+  position: relative;
+  transform: translateZ(0);
+  transform-origin: center;
+  transition:
+    transform .32s cubic-bezier(.2,.8,.2,1),
+    box-shadow .32s ease,
+    border-color .32s ease,
+    filter .32s ease;
+  will-change: transform;
+}
+@media (hover: hover) and (pointer: fine) {
+  .orbit-service:hover,
+  .service-listing .process-card:hover {
+    z-index: 4;
+    transform: translateY(-9px) scale(1.035);
+    box-shadow: 0 18px 34px rgba(27,78,47,.22), 0 0 0 2px rgba(234,254,31,.72);
+    filter: saturate(1.06);
+  }
+  .orbit-service:hover {
+    transform: translateY(-10px) scale(1.055) rotate(-.5deg);
+  }
+  .service-listing .process-card:hover {
+    border-color: rgba(27,78,47,.42);
+  }
+}
+.orbit-service:active,
+.service-listing .process-card:active {
+  transform: translateY(-3px) scale(1.025);
+  box-shadow: 0 10px 22px rgba(27,78,47,.18);
+}
+.orbit-service:focus-visible,
+.service-listing .process-card:focus-visible {
+  outline: 3px solid #eafe1f;
+  outline-offset: 4px;
+}
+@media (hover: none), (pointer: coarse) {
+  .orbit-service,
+  .service-listing .process-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-service,
+  .service-listing .process-card {
+    transition: none;
+    will-change: auto;
+  }
+  .orbit-service:hover,
+  .service-listing .process-card:hover,
+  .orbit-service:active,
+  .service-listing .process-card:active {
+    transform: none;
+    filter: none;
+  }
+}
+</style>
+<style id="contact-heading-two-lines">
+  #contactTitle {
+    font-size: clamp(1.35rem, 4.8vw, 2.8rem);
+    line-height: 1.08;
+    max-width: none;
+  }
+  #contactTitle .contact-title-main {
+    display: block;
+    font-size: clamp(2.6rem, 7.2vw, 5.2rem);
+    line-height: .98;
+    font-weight: 900;
+    letter-spacing: -.055em;
+    margin-bottom: .22em;
+  }
+  #contactTitle .contact-title-line {
+    display: block;
+    white-space: nowrap;
+  }
+  @media (max-width: 700px) {
+    #contactTitle {
+      font-size: clamp(1.25rem, 5.1vw, 1.8rem);
+    }
+    #contactTitle .contact-title-main {
+      font-size: clamp(2.45rem, 12vw, 3.7rem);
+    }
+  }
+</style>
+<style id="header-footer-email-contact">
+  .brand-contact-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    min-width: 0;
+  }
+  .header-email, .footer-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: inherit;
+    text-decoration: none;
+    font-size: .82rem;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+  }
+  .header-email svg, .footer-email svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+  }
+  .header-email:hover, .footer-email:hover {
+    color: var(--lime);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .footer-contact-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+  }
+  @media (max-width: 640px) {
+    .brand-contact-group {
+      gap: 4px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .header-email {
+      font-size: .68rem;
+      gap: 5px;
+    }
+    .header-email svg {
+      width: 14px;
+      height: 14px;
+      flex-basis: 14px;
+    }
+    .site-header {
+      align-items: center;
+    }
+    .footer-contact-group {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .footer-email {
+      font-size: .78rem;
+    }
+  }
+</style>
+<style id="pfc-live-motion-refinement">
+/* Four-card performance row and more energetic, continuous motion. */
+.live-results-showcase .pfc-metric-row {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.live-results-showcase .pfc-metric-card {
+  position: relative;
+  overflow: hidden;
+  animation: pfc-card-float 3.4s ease-in-out infinite;
+  will-change: transform;
+}
+.live-results-showcase .pfc-metric-card:nth-child(2) { animation-delay: -.85s; }
+.live-results-showcase .pfc-metric-card:nth-child(3) { animation-delay: -1.7s; }
+.live-results-showcase .pfc-metric-card:nth-child(4) { animation-delay: -2.55s; }
+.live-results-showcase .pfc-metric-card::after {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(120deg, transparent 15%, rgba(234,254,31,.12) 48%, rgba(105,230,195,.10) 62%, transparent 82%);
+  transform: translateX(-115%); animation: pfc-card-sheen 5.2s ease-in-out infinite;
+}
+.live-results-showcase .pfc-metric-card:nth-child(2)::after { animation-delay: -1.3s; }
+.live-results-showcase .pfc-metric-card:nth-child(3)::after { animation-delay: -2.6s; }
+.live-results-showcase .pfc-metric-card:nth-child(4)::after { animation-delay: -3.9s; }
+.live-results-showcase .pfc-metric-card:hover {
+  transform: translateY(-14px) scale(1.045);
+  border-color: #eafe1f;
+  box-shadow: 0 26px 70px rgba(0,0,0,.42), 0 0 34px rgba(234,254,31,.20);
+  animation-play-state: paused;
+}
+.live-results-showcase .lr-glow {
+  width: 440px; height: 440px;
+  background: radial-gradient(circle, rgba(3,10,8,.62) 0%, rgba(5,18,14,.42) 24%, rgba(27,78,47,.28) 48%, rgba(105,230,195,.12) 63%, transparent 74%);
+  mix-blend-mode: screen;
+  filter: blur(8px);
+  transition: opacity .18s ease;
+}
+.live-results-showcase.lr-cursor-active .lr-glow { opacity: 1; }
+@keyframes pfc-card-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  28% { transform: translateY(-9px) scale(1.008); }
+  55% { transform: translateY(-16px) scale(1.012); }
+  78% { transform: translateY(-6px) scale(1.004); }
+}
+@keyframes pfc-card-sheen {
+  0%, 18% { transform: translateX(-115%); opacity: 0; }
+  30% { opacity: .8; }
+  58%, 100% { transform: translateX(115%); opacity: 0; }
+}
+@media (max-width: 760px) {
+  .live-results-showcase .pfc-metric-row { grid-template-columns: 1fr; }
+  .live-results-showcase .pfc-metric-card { animation-duration: 4.2s; }
+  .live-results-showcase .lr-glow { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-results-showcase .pfc-metric-card,
+  .live-results-showcase .pfc-metric-card::after { animation: none !important; }
+}
+</style>
+<style>
+/* Site-wide cursor-following glow for clickable icons (desktop pointers only). */
+#site-clickable-icon-glow {
+  position: fixed; left: 0; top: 0; width: 124px; height: 124px;
+  border-radius: 50%; pointer-events: none; z-index: 9997; opacity: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0,0,0,.38) 0%, rgba(0,0,0,.22) 28%, rgba(27,78,47,.12) 48%, rgba(0,0,0,0) 72%);
+  filter: drop-shadow(0 0 9px rgba(0,0,0,.34)) drop-shadow(0 0 13px rgba(138,110,255,.22));
+  transition: opacity .18s ease; mix-blend-mode: multiply;
+}
+#site-clickable-icon-glow.is-visible { opacity: 1; }
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  #site-clickable-icon-glow { display: none !important; }
+}
+</style>
+<style id="mobile-arrow-thin-match">
+/* Mobile only: replace the blue emoji arrow with the same thin diagonal arrow used on desktop. */
+@media screen and (max-width: 760px) {
+  html body a .cover-overlay strong .link-arrow,
+  html body a.podcast-watch-link > span[aria-hidden="true"] {
+    display: inline-block !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1.08em !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    color: currentColor !important;
+    vertical-align: -0.02em !important;
+    text-decoration: none !important;
+  }
+  html body a .cover-overlay strong .link-arrow::after,
+  html body a.podcast-watch-link > span[aria-hidden="true"]::after {
+    content: none !important;
+    display: none !important;
+  }
+}
+</style>
+<style id="ios-mobile-arrow-text-presentation">
+@media screen and (max-width: 760px) {
+  a .link-arrow,
+  a.podcast-watch-link > span[aria-hidden="true"] {
+    display: inline-block !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-variant-emoji: text !important;
+    vertical-align: middle !important;
+  }
+  a .link-arrow::after,
+  a.podcast-watch-link > span[aria-hidden="true"]::after {
+    content: "↗︎" !important;
+    display: inline-block !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1.08rem !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    color: currentColor !important;
+    font-variant-emoji: text !important;
+    vertical-align: middle !important;
+  }
+}
+</style>
+<style id="larger-portrait-face-desktop-mobile">
+/* Stronger portrait zoom so Karen's face is more prominent in the circular frame. */
+.orbit-portrait {
+  transform: scale(1.38);
+  transform-origin: center 32%;
+}
+</style>
+<style id="mobile-portrait-clearance-only">
+/* Mobile only: lift the portrait circle slightly so it clears the service cards. */
+@media (max-width: 760px) {
+  .orbit-core {
+    transform: translateY(-16px) !important;
+  }
+}
+</style>
+<style id="video03-thumbnail-fit">
+#podcastVideo03 .podcast-video-thumb {
+  aspect-ratio: 16 / 9;
+  background: #0b0f19;
+}
+#podcastVideo03 .podcast-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #0b0f19;
+}
+</style>
+<style id="contact-cta-philippines-enhancements">
+/* Philippine identity and WhatsApp availability CTA */
+.brand .philippine-flag { display:inline-block; font-size:1em; line-height:1; vertical-align:baseline; letter-spacing:0; margin-right:.12em; }
+footer .philippine-flag { display:inline-block; font-size:1em; line-height:1; vertical-align:baseline; margin:0 .12em; }
+.contact-qr-stack { width:min(100%, 360px); display:flex; flex-direction:column; align-items:center; justify-self:center; gap:14px; }
+.contact-qr-stack .contact-qr-link { width:100%; }
+.availability-badge { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:38px; padding:8px 16px; border:1px solid rgba(234,254,31,.75); border-radius:999px; color:#eafe1f; background:rgba(234,254,31,.09); text-decoration:none; text-transform:uppercase; letter-spacing:.09em; font-size:.76rem; font-weight:900; box-shadow:0 0 0 0 rgba(234,254,31,.36); animation:availability-pulse 1.8s ease-out infinite; transition:transform .2s ease, background .2s ease; }
+.availability-badge:hover,.availability-badge:focus-visible { transform:translateY(-2px); background:rgba(234,254,31,.18); outline:2px solid #eafe1f; outline-offset:3px; }
+.availability-dot { width:8px; height:8px; flex:0 0 8px; border-radius:50%; background:#eafe1f; box-shadow:0 0 10px rgba(234,254,31,.85); }
+@keyframes availability-pulse { 0% { box-shadow:0 0 0 0 rgba(234,254,31,.34); } 70% { box-shadow:0 0 0 9px rgba(234,254,31,0); } 100% { box-shadow:0 0 0 0 rgba(234,254,31,0); } }
+.contact-qr-instruction { margin:0; max-width:340px; color:#f4fff7; text-align:center; font-size:clamp(.92rem,1.25vw,1.02rem); line-height:1.55; }
+.contact-qr-instruction strong { color:#eafe1f; font-weight:900; letter-spacing:.04em; }
+@media (max-width:700px) { .contact-qr-stack { width:min(100%, 330px); gap:12px; } .availability-badge { font-size:.72rem; } .contact-qr-instruction { max-width:310px; } }
+@media (prefers-reduced-motion:reduce) { .availability-badge { animation:none; } }
+</style>
+<style id="contact-cta-size-and-motion-update">
+/* Larger, full-width availability CTA aligned with the QR card */
+.contact-qr-stack { width:min(100%, 360px); align-items:stretch; gap:16px; }
+.contact-qr-stack .contact-qr-link { width:100%; box-sizing:border-box; }
+.availability-badge { display:flex; width:100%; box-sizing:border-box; min-height:54px; padding:13px 18px; border:2px solid #eafe1f; border-radius:999px; font-size:clamp(.88rem, 1.15vw, 1rem); letter-spacing:.12em; gap:12px; background:rgba(234,254,31,.14); box-shadow:0 0 0 0 rgba(234,254,31,.8), 0 0 18px rgba(234,254,31,.42), inset 0 0 12px rgba(234,254,31,.12); animation:availability-strong-pulse 1.05s ease-in-out infinite; }
+.availability-dot { width:11px; height:11px; flex-basis:11px; box-shadow:0 0 8px #eafe1f, 0 0 18px #eafe1f; animation:availability-dot-flash .65s steps(2, end) infinite; }
+@keyframes availability-strong-pulse { 0%,100% { box-shadow:0 0 0 0 rgba(234,254,31,.75), 0 0 18px rgba(234,254,31,.45), inset 0 0 12px rgba(234,254,31,.12); filter:brightness(1); } 50% { box-shadow:0 0 0 9px rgba(234,254,31,.16), 0 0 34px rgba(234,254,31,.95), inset 0 0 20px rgba(234,254,31,.25); filter:brightness(1.28); } }
+@keyframes availability-dot-flash { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.28; transform:scale(.72); } }
+.contact-qr-caption { display:block; color:#1b4e2f; text-align:center; font-size:clamp(1.12rem, 1.65vw, 1.38rem); font-weight:1000; line-height:1.18; letter-spacing:.015em; padding:16px 8px 10px; text-transform:none; }
+@media(max-width:700px) { .contact-qr-stack { width:min(100%, 330px); gap:14px; } .availability-badge { min-height:52px; font-size:.9rem; letter-spacing:.1em; } .contact-qr-caption { font-size:clamp(1.12rem, 5vw, 1.32rem); padding:15px 6px 9px; } }
+@media(prefers-reduced-motion:reduce) { .availability-badge,.availability-dot { animation:none; } }
+
+.contact-qr-caption { font-weight:400 !important; }
+.contact-qr-caption strong { font-weight:800 !important; }
+</style>
+<style id="banana-caption-center-two-lines">
+.contact-qr-caption {
+  display:block;
+  width:100%;
+  text-align:center !important;
+  font-weight:400 !important;
+  line-height:1.2;
+}
+.contact-qr-caption strong { font-weight:800 !important; }
+</style>
+<style id="testimonial-hd-graphics-layout">
+.testimonials-section { background:#fbfcf7; }
+.testimonials-section .section-intro { margin-bottom:26px; }
+.testimonial-placeholder-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:stretch; gap:12px; }
+.testimonial-graphic-card { min-width:0; min-height:0; aspect-ratio:1.40 / 1; padding:0; border:0; border-radius:0; overflow:hidden; background:transparent; box-shadow:none; }
+.testimonial-graphic-card img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
+@media(max-width:760px) { .testimonial-placeholder-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; } .testimonial-graphic-card { aspect-ratio:1.40 / 1; } }
+@media(max-width:390px) { .testimonial-placeholder-grid { gap:8px; } }
+</style>
+<style id="testimonial-final-artwork-fit">
+.testimonials-section { padding:clamp(48px,6vw,82px) 0; }
+.testimonials-section .section-inner { width:min(calc(100% - 44px), 1440px); }
+.testimonials-section h2 { margin-bottom:10px; }
+.testimonials-section .section-intro { margin-bottom:30px; }
+.testimonial-placeholder-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  align-items:center;
+}
+.testimonial-graphic-card {
+  width:100%;
+  aspect-ratio:1.53 / 1;
+  min-height:0;
+  padding:0;
+  margin:0;
+  border:0;
+  border-radius:0;
+  overflow:visible;
+  background:transparent;
+  box-shadow:none;
+}
+.testimonial-graphic-card img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+@media(max-width:900px) {
+  .testimonials-section .section-inner { width:min(calc(100% - 32px),720px); }
+  .testimonial-placeholder-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+}
+@media(max-width:480px) {
+  .testimonials-section .section-inner { width:calc(100% - 24px); }
+  .testimonial-placeholder-grid { gap:10px; }
+}
+</style>
+<style id="testimonial-manual-artwork-layout">
+#testimonials .section-inner {
+  width:min(calc(100% - 40px), 1640px);
+  margin-inline:auto;
+}
+#testimonials .testimonial-placeholder-grid {
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:clamp(8px,1.2vw,18px) !important;
+  align-items:center;
+}
+#testimonials .testimonial-graphic-card {
+  display:block !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  height:auto !important;
+  aspect-ratio:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  overflow:visible !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+#testimonials .testimonial-graphic-card img {
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-width:none !important;
+  object-fit:initial !important;
+  object-position:center !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+}
+@media(max-width:760px) {
+  #testimonials .section-inner { width:calc(100% - 28px); }
+  #testimonials .testimonial-placeholder-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px !important;
+  }
+}
+@media(max-width:390px) {
+  #testimonials .section-inner { width:calc(100% - 20px); }
+  #testimonials .testimonial-placeholder-grid { gap:8px !important; }
+}
+</style>
+<style id="testimonial-hover-motion">
+/* Subtle premium hover interaction for the four original testimonial artworks */
+#testimonials .testimonial-graphic-card {
+  position:relative;
+  transform:translateY(0) scale(1);
+  transform-origin:center center;
+  transition:
+    transform 360ms cubic-bezier(.2,.75,.25,1),
+    filter 360ms ease;
+  will-change:transform,filter;
+  cursor:default;
+}
+#testimonials .testimonial-graphic-card img {
+  transition:
+    filter 360ms ease,
+    drop-shadow 360ms ease;
+}
+@media (hover:hover) and (pointer:fine) {
+  #testimonials .testimonial-graphic-card:hover {
+    transform:translateY(-10px) scale(1.035);
+    filter:drop-shadow(0 16px 20px rgba(27,78,47,.18));
+    z-index:2;
+  }
+  #testimonials .testimonial-graphic-card:hover img {
+    filter:brightness(1.035) saturate(1.04);
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  #testimonials .testimonial-graphic-card,
+  #testimonials .testimonial-graphic-card img {
+    transition:none !important;
+  }
+  #testimonials .testimonial-graphic-card:hover {
+    transform:none !important;
+    filter:none !important;
+  }
+}
+</style>
+
+<style id="mobile-menu-visible-dropdown-fix">
+@media (max-width: 640px) {
+  /* Keep the mobile menu in its own visible layer, above the hero artwork. */
+  #siteNav.open {
+    display: flex !important;
+    position: fixed !important;
+    top: 76px !important;
+    left: 14px !important;
+    right: 14px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: calc(100vh - 92px) !important;
+    overflow-y: auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    padding: 10px 18px 16px !important;
+    background: #1b4e2f !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255,255,255,.24) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 14px 34px rgba(0,0,0,.28) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 2147483000 !important;
+    transform: none !important;
+  }
+  #siteNav.open a {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    padding: 16px 4px !important;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+    text-decoration: none !important;
+    border-top: 1px solid rgba(255,255,255,.22) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  #siteNav.open a:first-child {
+    border-top: 0 !important;
+  }
+}
+</style>
+
+</head>
+<body>
+<header class="site-header">
+<div class="brand-contact-group">
+<a aria-label="Hey, I'm Karen home" class="brand" href="#home"><span aria-hidden="true" class="philippine-flag">🇵🇭</span> Hey, I'm Karen!</a>
+<a aria-label="Email virtuallybanana@gmail.com" class="header-email" href="mailto:virtuallybanana@gmail.com">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5.5h18v13H3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<span>virtuallybanana@gmail.com</span>
+</a>
+</div>
+<button aria-controls="siteNav" aria-expanded="false" class="menu-toggle" id="menuToggle">☰ Menu</button>
+<nav aria-label="Main navigation" class="nav" id="siteNav">
+<a href="#work">WORK</a>
+<a href="#services">SERVICES</a>
+<a href="#contact">CONTACT ME</a>
+</nav>
+</header>
+<main>
+<section aria-label="Homepage introduction" class="hero karen-hero" id="home">
+<div class="karen-hero-art">
+<img alt="Mobile homepage hero: Karen Liñan, social media management and creative services" class="karen-hero-mobile-reference" fetchpriority="high" loading="eager" src="assets/image-002.png"/>
+<a aria-label="View my work" class="karen-mobile-hotspot karen-mobile-hotspot--work" href="#work"></a>
+<a aria-label="Let’s connect" class="karen-mobile-hotspot karen-mobile-hotspot--contact" href="#contact"></a>
+<img alt="Karen Linan — social media, strategy and creative portfolio introduction" class="karen-hero-desktop" src="assets/image-003.png"/>
+<img alt="Karen Liñan mobile portfolio hero" class="karen-hero-mobile-image" src="assets/image-004.png"/>
+<a aria-label="View my work" class="karen-hero-image-link karen-hero-image-link--work" href="#work">View my work</a>
+<a aria-label="Let's connect" class="karen-hero-image-link karen-hero-image-link--contact" href="#contact">Let's connect</a>
+</div>
+<div class="karen-hero-actions">
+<a class="btn" href="#work">VIEW MY WORK <span aria-hidden="true" class="link-arrow">↗</span></a>
+<a class="btn btn-outline" href="#contact">LET’S CONNECT <span aria-hidden="true" class="link-arrow">↗</span></a>
+<span class="karen-hero-note">Creative thinking. Scroll-stopping execution.</span>
+</div>
+</section>
+<section class="services" id="services">
+<div class="section-inner">
+<p class="eyebrow">01 / What I do</p>
+<h2>Creative support.<br/>Strategic thinking.</h2>
+<p class="section-intro">Flexible creative and marketing support to help your brand stay consistent, look polished, and connect with the right audience.</p>
+<div aria-label="Four connected creative and marketing services" class="service-orbit">
+<div class="orbit-ring orbit-ring-one"></div>
+<div class="orbit-ring orbit-ring-two"></div>
+<div class="orbit-core"><img alt="Portrait photo" class="orbit-portrait" src="assets/image-005.jpg"/></div>
+<article class="orbit-service orbit-service-one">
+<span class="orbit-number">01 <i></i> SOCIAL</span>
+<h3>Audience &amp; Presence</h3>
+<p>Build a recognizable brand presence and stronger audience connection.</p>
+</article>
+<article class="orbit-service orbit-service-two">
+<span class="orbit-number">02 <i></i> STRATEGY</span>
+<h3>Planning &amp; Direction</h3>
+<p>Give every post a clear purpose, message, and direction.</p>
+</article>
+<article class="orbit-service orbit-service-three">
+<span class="orbit-number">03 <i></i> DESIGN</span>
+<h3>Creative Production</h3>
+<p>Turn ideas into polished visuals and engaging short-form content.</p>
+</article>
+<article class="orbit-service orbit-service-four">
+<span class="orbit-number">04 <i></i> SUPPORT</span>
+<h3>Marketing Operations</h3>
+<p>Keep the day-to-day details organized and moving smoothly.</p>
+</article>
+<span class="orbit-caption orbit-caption-top">ONE CREATIVE PARTNER</span>
+<span class="orbit-caption orbit-caption-bottom">FOUR WAYS TO MOVE YOUR BRAND FORWARD ↗</span>
+</div><div aria-label="Ten-step social media strategy and content process" class="service-listing"><div class="service-listing-heading"><p class="service-listing-kicker">THE SERVICES BEHIND THE STRATEGY</p><h3>From the first idea to the final post.</h3></div><div class="service-list-grid process-grid"><article class="service-detail-card process-card"><span class="service-detail-number">01</span><h4>Discovery &amp; Brand Audit</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Understand your business, products/services, and goals</span></li><li><span aria-hidden="true">✓</span><span>Review existing social media presence and performance</span></li><li><span aria-hidden="true">✓</span><span>Assess brand identity (voice, style, visuals) and key differentiators</span></li><li><span aria-hidden="true">✓</span><span>Align on scope, deliverables, and KPIs</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">02</span><h4>Market &amp; Industry Research</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Analyze industry trends and emerging topics</span></li><li><span aria-hidden="true">✓</span><span>Identify market demand and customer pain points</span></li><li><span aria-hidden="true">✓</span><span>Research relevant keywords, hashtags, and content opportunities</span></li><li><span aria-hidden="true">✓</span><span>Spot seasonal events and industry timing for relevant campaigns</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">03</span><h4>Target Audience Research</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Define ideal customer profiles (e.g., demographics, location, interests, behavior)</span></li><li><span aria-hidden="true">✓</span><span>Understand their needs, challenges, and decision triggers</span></li><li><span aria-hidden="true">✓</span><span>Identify the best platforms and content formats they engage with</span></li><li><span aria-hidden="true">✓</span><span>Map the customer journey (awareness → consideration → action)</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">04</span><h4>Competitor Analysis</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Identify key competitors (direct and indirect)</span></li><li><span aria-hidden="true">✓</span><span>Analyze their content (topics, format, frequency, and style)</span></li><li><span aria-hidden="true">✓</span><span>Review engagement, audience growth, and top-performing posts</span></li><li><span aria-hidden="true">✓</span><span>Find content gaps, opportunities, and ways to differentiate your brand</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">05</span><h4>Strategy Development</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Set clear and measurable objectives (e.g., awareness, engagement, leads)</span></li><li><span aria-hidden="true">✓</span><span>Define content pillars and key themes</span></li><li><span aria-hidden="true">✓</span><span>Create a content and campaign strategy (with aligned messaging and CTAs)</span></li><li><span aria-hidden="true">✓</span><span>Establish platform-specific approaches (e.g., FB, IG, LinkedIn, TikTok, YouTube)</span></li><li><span aria-hidden="true">✓</span><span>Set success metrics (KPIs) for tracking</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">06</span><h4>Content Planning &amp; Calendar</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Build a monthly content calendar (weekly/daily posting plan)</span></li><li><span aria-hidden="true">✓</span><span>Map content by pillar, platform, and campaign</span></li><li><span aria-hidden="true">✓</span><span>Plan post types (graphics, videos, reels, carousels, blogs, etc.)</span></li><li><span aria-hidden="true">✓</span><span>Include key dates (holidays, events, product launches) and promotions</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">07</span><h4>Content Creation &amp; Asset Production</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Create on-brand graphics and marketing assets (Canva Pro)</span></li><li><span aria-hidden="true">✓</span><span>Edit short-form and long-form videos (CapCut Pro)</span></li><li><span aria-hidden="true">✓</span><span>Write compelling, platform-optimized captions and CTAs</span></li><li><span aria-hidden="true">✓</span><span>Prepare supporting assets (thumbnails, subtitles, hashtags, and links)</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">08</span><h4>Review, Approval &amp; Final Preparation</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Quality check for accuracy, branding, and platform requirements</span></li><li><span aria-hidden="true">✓</span><span>Confirm captions, hashtags, and links</span></li><li><span aria-hidden="true">✓</span><span>Ensure videos/graphics meet specs and best practices</span></li><li><span aria-hidden="true">✓</span><span>Send for client review and approval</span></li><li><span aria-hidden="true">✓</span><span>Prepare final files and schedule in the content tool</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">09</span><h4>Scheduling &amp; Publishing</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Schedule content using Meta Business Suite or your preferred tool</span></li><li><span aria-hidden="true">✓</span><span>Publish across relevant platforms (FB, IG, LinkedIn, YouTube, TikTok, etc.)</span></li><li><span aria-hidden="true">✓</span><span>Ensure proper formatting, tagging, and platform optimization</span></li><li><span aria-hidden="true">✓</span><span>Monitor for successful posting and initial engagement</span></li></ul></article><article class="service-detail-card process-card"><span class="service-detail-number">10</span><h4>Performance Analysis &amp; Optimization</h4><ul class="process-checklist"><li><span aria-hidden="true">✓</span><span>Track key metrics (reach, impressions, engagement, clicks, leads, conversions)</span></li><li><span aria-hidden="true">✓</span><span>Analyze what's working and what's not (content, timing, format, messaging)</span></li><li><span aria-hidden="true">✓</span><span>Provide a performance report (weekly or monthly)</span></li><li><span aria-hidden="true">✓</span><span>Refine and optimize the content strategy for continuous growth and better results</span></li></ul></article></div></div>
+</div>
+</section>
+<section aria-labelledby="live-results-title" class="live-results-showcase lr-reveal pfc-live-dashboard">
+<div aria-hidden="true" class="lr-glow"></div>
+<div class="lr-inner">
+<h2 class="pfc-impact-headline lr-reveal-item">Scaling Social Brands with <span>Data &amp; Creative Storytelling.</span></h2>
+<div class="pfc-dashboard-top lr-reveal-item">
+<span class="pfc-dashboard-label"><i aria-hidden="true"></i> PFC · LIVE SMM PORTFOLIO STRATEGY</span>
+<span class="pfc-dashboard-status"><span aria-hidden="true">⌁</span> Performance snapshot</span>
+</div>
+<div class="pfc-chart-panel lr-reveal-item">
+<div class="pfc-chart-heading">
+<div>
+<p class="pfc-chart-eyebrow">LINKEDIN · ORGANIC PERFORMANCE</p>
+<h2 id="live-results-title">54,747 <span>impressions</span></h2>
+<p class="pfc-chart-comparison"><strong>+293%</strong> compared with the previous period</p>
+</div>
+<span class="pfc-chart-period">APR 17 – JUL 15, 2026</span>
+</div>
+<div aria-label="LinkedIn organic impressions increased from 13,933 in the previous period to 54,747 in the period April 17 to July 15, 2026, an increase of approximately 293 percent." class="pfc-chart-wrap" role="img">
+<svg aria-hidden="true" class="pfc-performance-chart" preserveaspectratio="none" viewbox="0 0 1000 290">
+<defs>
+<lineargradient id="pfcLineGradient" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#eafe1f"></stop>
+<stop offset="55%" stop-color="#55d8c2"></stop>
+<stop offset="100%" stop-color="#9b8cff"></stop>
+</lineargradient>
+<lineargradient id="pfcAreaGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#55d8c2" stop-opacity=".25"></stop>
+<stop offset="100%" stop-color="#55d8c2" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<g class="pfc-chart-grid">
+<path d="M0 45H1000 M0 105H1000 M0 165H1000 M0 225H1000"></path>
+</g>
+<path class="pfc-chart-area" d="M28 224 C150 184 188 138 285 151 S420 185 510 126 S665 62 742 92 S884 68 972 48 L972 258 L28 258 Z"></path>
+<path class="pfc-chart-line" d="M28 224 C150 184 188 138 285 151 S420 185 510 126 S665 62 742 92 S884 68 972 48"></path>
+<circle class="pfc-chart-point pfc-chart-point-start" cx="28" cy="224" r="7"></circle>
+<circle class="pfc-chart-point pfc-chart-point-end" cx="972" cy="48" r="9"></circle>
+<circle class="pfc-chart-point-pulse" cx="972" cy="48" r="17"></circle>
+</svg>
+<span class="pfc-chart-tag pfc-chart-tag-start">13,933 · Previous period</span>
+<span class="pfc-chart-tag pfc-chart-tag-end">54,747 · Current period</span>
+</div>
+<div class="pfc-chart-axis">
+<span>JAN 17 – APR 17, 2026</span>
+<span>APR 17 – JUL 15, 2026</span>
+</div>
+</div>
+<div aria-label="Primary Funding Corporation social media performance metrics" class="lr-metrics pfc-metric-row">
+<article class="lr-card lr-reveal-item pfc-metric-card">
+<div class="pfc-card-top"><span>LinkedIn</span><span aria-hidden="true" class="pfc-card-icon pfc-icon-cyan">↗</span></div>
+<strong class="lr-value">+293%</strong>
+<p class="lr-label">Organic impressions growth</p>
+<p class="lr-note">54,747 impressions versus 13,933 in the previous period.</p>
+</article>
+<article class="lr-card lr-reveal-item pfc-metric-card">
+<div class="pfc-card-top"><span>Instagram</span><span aria-hidden="true" class="pfc-card-icon pfc-icon-violet">◎</span></div>
+<strong class="lr-value">91,313</strong>
+<p class="lr-label">Views · Last 90 days</p>
+<p class="lr-note">Account views captured in the project analytics.</p>
+</article>
+<article class="lr-card lr-reveal-item pfc-metric-card">
+<div class="pfc-card-top"><span>YouTube</span><span aria-hidden="true" class="pfc-card-icon pfc-icon-lime">▶</span></div>
+<strong class="lr-value">10,292</strong>
+<p class="lr-label">Views</p>
+<p class="lr-note">YouTube views recorded in the project results.</p>
+</article>
+<article class="lr-card lr-reveal-item pfc-metric-card">
+<div class="pfc-card-top"><span>Facebook</span><span aria-hidden="true" class="pfc-card-icon pfc-icon-cyan">f</span></div>
+<strong class="lr-value">1,441</strong>
+<p class="lr-label">Interactions · +45%</p>
+<p class="lr-note">Meta results compared with the previous 28-day period.</p>
+</article>
+</div>
+<p class="pfc-dashboard-footnote">Selected project · 01 — B2B Financial Services, USA · Primary Funding Corporation. Metrics are taken from the analytics visuals included in this project.</p>
+</div>
+</section>
+<section class="work" id="work">
+<div class="section-inner">
+<p class="eyebrow">02 / Selected work</p>
+<h2>A closer look at my work.</h2>
+<p class="section-intro">A selection of creative directions across social content, branded campaigns, and digital marketing support.</p>
+<div class="work-grid">
+<article class="project">
+<a aria-label="Open B2B Finance project gallery" class="cover-project" href="#financeGallery">
+<img alt="Primary Funding Corporation — Profitable is not the same as liquid, Q4 cash flow reality cover artwork" src="assets/image-006.jpg"/>
+<span class="cover-overlay"><span class="art-label">B2B Financial Services — USA</span><strong>View project gallery <span aria-hidden="true" class="link-arrow">↗</span></strong></span>
+</a>
+<h3>B2B Financial Services — USA</h3><p>Primary Funding Corporation · Strategic social media content, financial education graphics, blog visuals, and integrated marketing campaigns.</p>
+</article>
+<article class="project">
+<a aria-label="Open Million Dollar Inventions project gallery" class="cover-project" href="#midiGallery">
+<img alt="B2B Product Consultation Services — USA cover for Million Dollar Inventions" src="assets/image-007.webp"/>
+<span class="cover-overlay"><span class="art-label">B2B Product Consultation Services — USA</span><strong>View project gallery <span aria-hidden="true" class="link-arrow">↗</span></strong></span>
+</a>
+<h3>B2B Product Consultation Services — USA</h3>
+<p>Million Dollar Inventions · Startup branding, multi-platform content, and social media branding.</p>
+</article>
+<article class="project">
+<a aria-label="Open Perry Siow Advisory project gallery" class="cover-project" href="#perryGallery">
+<img alt="Perry Siow Advisory real estate marketing graphic: A Developer Won the Land" src="assets/image-008.webp"/>
+<span class="cover-overlay"><span class="art-label">B2B Real Estate Advisory — Singapore</span><strong>View project gallery <span aria-hidden="true" class="link-arrow">↗</span></strong></span>
+</a>
+<h3>B2B Real Estate Advisory — Singapore</h3>
+<p>Perry Siow Advisory · Personal brand development, LinkedIn and YouTube optimization, real estate marketing graphics, and content strategy.</p>
+</article>
+<article class="project">
+<a aria-label="Open Brand Collateral and Marketing Assets project gallery" class="cover-project" href="#brandCollateralGallery"><img alt="Modern House for Rent — Brand Collateral and Marketing Assets cover" height="1200" loading="lazy" src="assets/image-009.webp" width="1200"/><span class="cover-overlay"><span class="art-label">Brand Collateral and Marketing Assets</span><strong>View project gallery <span aria-hidden="true" class="link-arrow">↗</span></strong></span></a>
+<h3>Brand Collateral and Marketing Assets</h3>
+<p>Cross-industry creative content, branded social media graphics, promotional campaigns, real estate listing and sold-property visuals, café and skincare marketing, and engaging educational content.</p>
+</article>
+<article class="project">
+<a aria-label="Open Podcast, Video Repurposing and Reels project gallery" class="cover-project" href="#podcastGallery">
+<img alt="Podcast, Video Repurposing and Reels — CPG Dream video editing and repurposing project cover" height="1200" loading="lazy" src="assets/image-010.png" width="1200"/>
+<span class="cover-overlay"><span class="art-label">Podcast, Video Repurposing and Reels</span><strong>View project gallery <span aria-hidden="true" class="link-arrow">↗</span></strong></span>
+</a>
+<h3>Podcast, Video Repurposing and Reels</h3>
+<p>Long-form video editing, podcast clips, repurposed content, and scroll-stopping short-form reels for multi-platform publishing.</p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="podcastGalleryTitle" class="gallery-dialog" id="podcastGallery">
+<div class="gallery-panel podcast-gallery-panel">
+<div class="gallery-head">
+<div>
+<p class="eyebrow">Selected project · 05</p>
+<h2 id="podcastGalleryTitle">Podcast, Video Repurposing and Reels</h2>
+<p>Long-form video and podcast content transformed into engaging, platform-ready short-form videos. Explore the published YouTube Shorts below.</p>
+</div>
+<a aria-label="Close project gallery" class="gallery-close" href="#work">×</a>
+</div>
+<div class="gallery-body">
+<div class="podcast-gallery-intro">
+<p>One recording, multiple content opportunities — edited, repurposed, and organized for audience engagement across platforms.</p>
+</div>
+<section aria-labelledby="podcastFeaturedTitle" class="podcast-featured">
+<div class="podcast-featured-heading">
+<span class="podcast-featured-kicker">LONG-FORM CONVERSATIONS</span>
+<h3 id="podcastFeaturedTitle">PODCAST</h3>
+<p>Featured podcast episodes — stories, ideas, and product innovations brought to life through video.</p>
+</div>
+<div class="podcast-feature-grid">
+<article class="podcast-feature-card">
+<a aria-label="Watch Hulk Hogan and Rick’s Million $ Story on YouTube" class="podcast-feature-thumb" href="https://www.youtube.com/watch?v=Z06kqbFOrc4&amp;list=PLSYPaQUASWQSvfo-CQNCPuvsu51h6Evai&amp;index=6" rel="noopener noreferrer" target="_blank">
+<img alt="Hulk Hogan and Rick’s Million $ Story — YouTube podcast thumbnail" height="365" loading="lazy" src="assets/image-011.jpg" width="460"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-feature-copy">
+<span class="podcast-video-number">PODCAST · 01</span>
+<h3>Hulk Hogan and Rick’s Million $ Story</h3>
+<p>MDI Podcast · Episode 01</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/watch?v=Z06kqbFOrc4&amp;list=PLSYPaQUASWQSvfo-CQNCPuvsu51h6Evai&amp;index=6" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article><article class="podcast-feature-card">
+<a aria-label="Watch Bill McAlister: From Baseball to Billion-Dollar ‘As Seen on TV’ Empire on YouTube" class="podcast-feature-thumb" href="https://www.youtube.com/watch?v=4rn3RPVTgtU&amp;list=PLSYPaQUASWQSvfo-CQNCPuvsu51h6Evai&amp;index=3" rel="noopener noreferrer" target="_blank">
+<img alt="Bill McAlister: From Baseball to Billion-Dollar ‘As Seen on TV’ Empire — YouTube podcast thumbnail" height="365" loading="lazy" src="assets/image-012.jpg" width="470"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-feature-copy">
+<span class="podcast-video-number">PODCAST · 02</span>
+<h3>Bill McAlister: From Baseball to Billion-Dollar ‘As Seen on TV’ Empire</h3>
+<p>MDI Podcast · Episode 04</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/watch?v=4rn3RPVTgtU&amp;list=PLSYPaQUASWQSvfo-CQNCPuvsu51h6Evai&amp;index=3" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article><article class="podcast-feature-card">
+<a aria-label="Watch Tanya Lewis’ Million-Dollar Product: From Idea to QVC Green Glider Success on YouTube" class="podcast-feature-thumb" href="https://www.youtube.com/watch?v=OKQcE4bqSqw&amp;list=PLSYPaQUASWQSvfo-CQNCPuvsu51h6Evai&amp;index=4" rel="noopener noreferrer" target="_blank">
+<img alt="Tanya Lewis’ Million-Dollar Product: From Idea to QVC Green Glider Success — YouTube podcast thumbnail" height="365" loading="lazy" src="assets/image-013.jpg" width="460"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-feature-copy">
+<span class="podcast-video-number">PODCAST · 03</span>
+<h3>Tanya Lewis’ Million-Dollar Product: From Idea to QVC Green Glider Success</h3>
+<p>MDI Podcast · Episode 03</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/watch?v=OKQcE4bqSqw&amp;list=PLSYPaQUASWQSvfo-CQNCPuvsu51h6Evai&amp;index=4" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article><article class="podcast-feature-card">
+<a aria-label="Watch How Bobby Mann Invented the First Rechargeable Twitching Lure on YouTube" class="podcast-feature-thumb" href="https://www.youtube.com/watch?v=q5aWWWdlzP8&amp;list=PLSYPaQUASWQSvfo-CQNCPuvsu51h6Evai&amp;index=5" rel="noopener noreferrer" target="_blank">
+<img alt="How Bobby Mann Invented the First Rechargeable Twitching Lure — YouTube podcast thumbnail" height="365" loading="lazy" src="assets/image-014.jpg" width="470"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-feature-copy">
+<span class="podcast-video-number">PODCAST · 04</span>
+<h3>How Bobby Mann Invented the First Rechargeable Twitching Lure</h3>
+<p>MDI Podcast · Episode 02</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/watch?v=q5aWWWdlzP8&amp;list=PLSYPaQUASWQSvfo-CQNCPuvsu51h6Evai&amp;index=5" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article> </div>
+</section>
+<div class="podcast-reels-heading"><span>SHORT-FORM CONTENT</span><h3>VIDEO REELS &amp; REPURPOSED CLIPS</h3></div>
+<div class="podcast-video-grid">
+<article class="podcast-video-card">
+<a aria-label="Watch HULK HOGAN - a $3B story of innovation on YouTube" class="podcast-video-thumb" href="https://www.youtube.com/shorts/DV4shWQL26A" rel="noopener noreferrer" target="_blank">
+<img alt="YouTube thumbnail: HULK HOGAN - a $3B story of innovation" height="360" loading="lazy" src="https://img.youtube.com/vi/DV4shWQL26A/hqdefault.jpg" width="480"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-video-copy">
+<span class="podcast-video-number">VIDEO 01</span>
+<h3>HULK HOGAN - a $3B story of innovation</h3>
+<p>Rick McIntosh · Podcast highlight</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/shorts/DV4shWQL26A" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article><article class="podcast-video-card">
+<a aria-label="Watch The Genius Invention That Made Showers Easier on YouTube" class="podcast-video-thumb" href="https://www.youtube.com/shorts/HYQ7zmA3Ufo" rel="noopener noreferrer" target="_blank">
+<img alt="YouTube thumbnail: The Genius Invention That Made Showers Easier" height="360" loading="lazy" src="https://img.youtube.com/vi/HYQ7zmA3Ufo/hqdefault.jpg" width="480"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-video-copy">
+<span class="podcast-video-number">VIDEO 02</span>
+<h3>The Genius Invention That Made Showers Easier</h3>
+<p>Product story · Short-form edit</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/shorts/HYQ7zmA3Ufo" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article><article class="podcast-video-card" id="podcastVideo03">
+<a aria-label="Watch The Product Is KING | Why Demonstration Matters on YouTube" class="podcast-video-thumb" href="https://www.youtube.com/shorts/10mDR7PG15k" rel="noopener noreferrer" target="_blank">
+<img alt="The Product Is KING | Why Demonstration Matters" height="720" loading="lazy" src="assets/image-015.jpg" width="1280"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-video-copy">
+<span class="podcast-video-number">VIDEO 03</span>
+<h3>The Product Is KING | Why Demonstration Matters</h3>
+<p>Product demonstration · Reel</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/shorts/10mDR7PG15k" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article><article class="podcast-video-card">
+<a aria-label="Watch Microwavable Slippers?! When Crazy Ideas Work on YouTube" class="podcast-video-thumb" href="https://www.youtube.com/shorts/bKm_THYvmjo" rel="noopener noreferrer" target="_blank">
+<img alt="YouTube thumbnail: Microwavable Slippers?! When Crazy Ideas Work" height="360" loading="lazy" src="https://img.youtube.com/vi/bKm_THYvmjo/hqdefault.jpg" width="480"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-video-copy">
+<span class="podcast-video-number">VIDEO 04</span>
+<h3>Microwavable Slippers?! When Crazy Ideas Work</h3>
+<p>Product feature · Short-form edit</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/shorts/bKm_THYvmjo" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article><article class="podcast-video-card">
+<a aria-label="Watch The Legacy That Billy Mays Helped Build on YouTube" class="podcast-video-thumb" href="https://www.youtube.com/shorts/BO7Y4nJVlJQ" rel="noopener noreferrer" target="_blank">
+<img alt="YouTube thumbnail: The Legacy That Billy Mays Helped Build" height="360" loading="lazy" src="https://img.youtube.com/vi/BO7Y4nJVlJQ/hqdefault.jpg" width="480"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-video-copy">
+<span class="podcast-video-number">VIDEO 05</span>
+<h3>The Legacy That Billy Mays Helped Build</h3>
+<p>Podcast highlight · Storytelling</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/shorts/BO7Y4nJVlJQ" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article><article class="podcast-video-card">
+<a aria-label="Watch He Invented the Jack LaLanne Juicer on YouTube" class="podcast-video-thumb" href="https://www.youtube.com/shorts/oywcGzp4qaU" rel="noopener noreferrer" target="_blank">
+<img alt="YouTube thumbnail: He Invented the Jack LaLanne Juicer" height="360" loading="lazy" src="https://img.youtube.com/vi/oywcGzp4qaU/hqdefault.jpg" width="480"/>
+<span aria-hidden="true" class="podcast-play">▶</span>
+</a>
+<div class="podcast-video-copy">
+<span class="podcast-video-number">VIDEO 06</span>
+<h3>He Invented the Jack LaLanne Juicer</h3>
+<p>Product history · Short-form edit</p>
+<a class="podcast-watch-link" href="https://www.youtube.com/shorts/oywcGzp4qaU" rel="noopener noreferrer" target="_blank">Watch on YouTube <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="testimonialsTitle" class="testimonials-section" id="testimonials">
+<div class="section-inner">
+<p class="eyebrow">CLIENT WORDS</p>
+<h2 id="testimonialsTitle">A few kind words.</h2>
+<p class="section-intro">The best part of the work is the people behind it. Here’s what it’s like to work together.</p>
+<div aria-label="Four testimonial graphic placeholders" class="testimonial-placeholder-grid">
+<div class="testimonial-placeholder testimonial-graphic-card"><img alt="Client testimonial: Proactive and well-organized. Took initiative, planned ahead, and delivered quality work. Content and Marketing Support." height="1024" loading="lazy" src="assets/image-016.png" width="1536"/></div>
+<div class="testimonial-placeholder testimonial-graphic-card"><img alt="Client testimonial: Consistent, creative, and reliable. Keeps social media active, professional, and on brand. Social Media Management." height="1024" loading="lazy" src="assets/image-017.png" width="1536"/></div>
+<div class="testimonial-placeholder testimonial-graphic-card"><img alt="Client testimonial: A strategic partner. Understands the big picture, brings ideas, and delivers results. Content Strategy and Growth." height="1024" loading="lazy" src="assets/image-018.png" width="1536"/></div>
+<div class="testimonial-placeholder testimonial-graphic-card"><img alt="Client testimonial: Productive and a joy to work with. Responsive, collaborative, and truly invested in our goals. Ongoing SMM Partnership." height="1024" loading="lazy" src="assets/image-019.png" width="1536"/></div>
+</div>
+</div>
+</section>
+<style id="testimonial-graphics-placeholder-styles">
+.testimonials-section { background:#f7f9f4; color:var(--green); padding:clamp(42px,6vw,76px) 0; overflow:hidden; }
+.testimonials-section .section-inner { width:min(100% - 40px,1180px); margin:0 auto; }
+.testimonials-section h2 { margin:10px 0 8px; }
+.testimonials-section .section-intro { max-width:660px; margin-bottom:25px; }
+.testimonial-placeholder-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.testimonial-placeholder {
+  min-height:150px; aspect-ratio:1.55 / 1; position:relative; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:5px; padding:16px; box-sizing:border-box;
+  border:1.5px dashed rgba(27,78,47,.34); border-radius:15px;
+  background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(234,254,31,.12));
+  text-align:center;
+}
+.testimonial-placeholder-number { position:absolute; top:12px; left:14px; color:#78907b; font-size:.66rem; font-weight:850; letter-spacing:.12em; }
+.testimonial-placeholder-mark { color:var(--green); font-family:Georgia,serif; font-size:2.4rem; line-height:.8; opacity:.72; }
+.testimonial-placeholder-label { color:#718174; font-size:.68rem; font-weight:750; letter-spacing:.1em; text-transform:uppercase; }
+@media(max-width:760px) {
+  .testimonial-placeholder-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; }
+  .testimonial-placeholder { min-height:125px; border-radius:12px; }
+}
+@media(max-width:390px) {
+  .testimonials-section .section-inner { width:calc(100% - 28px); }
+  .testimonial-placeholder { min-height:112px; padding:12px; }
+}
+</style>
+<section aria-labelledby="platformsTitle" class="platforms-section" id="platforms">
+<div class="section-inner">
+<p class="eyebrow">03 / Platforms &amp; Tools</p>
+<h2 id="platformsTitle">The channels and tools behind the work.</h2>
+<p class="section-intro">The platforms I work across, supported by tools that keep every project organized, creative, and moving.</p>
+<div class="platform-group">
+<div class="platform-group-heading"><span class="platform-index">01</span><h3>Platforms</h3><p>Where brands show up and connect.</p></div>
+<div aria-label="Social media platforms" class="platform-grid"><a aria-label="Visit Facebook website" class="platform-tool-card" href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank"><img alt="Facebook logo" height="216" loading="lazy" src="assets/image-020.png" width="232"/></a>
+<a aria-label="Visit Instagram website" class="platform-tool-card" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank"><img alt="Instagram logo" height="216" loading="lazy" src="assets/image-021.png" width="232"/></a>
+<a aria-label="Visit LinkedIn website" class="platform-tool-card" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank"><img alt="LinkedIn logo" height="216" loading="lazy" src="assets/image-022.png" width="232"/></a>
+<a aria-label="Visit YouTube website" class="platform-tool-card" href="https://www.youtube.com/" rel="noopener noreferrer" target="_blank"><img alt="YouTube logo" height="216" loading="lazy" src="assets/image-023.png" width="232"/></a>
+<a aria-label="Visit TikTok website" class="platform-tool-card" href="https://www.tiktok.com/" rel="noopener noreferrer" target="_blank"><img alt="TikTok logo" height="216" loading="lazy" src="assets/image-024.png" width="232"/></a>
+<a aria-label="Visit Threads website" class="platform-tool-card" href="https://www.threads.net/" rel="noopener noreferrer" target="_blank"><img alt="Threads logo" height="216" loading="lazy" src="assets/image-025.png" width="232"/></a></div>
+</div>
+<div class="platform-group platform-tools-group">
+<div class="platform-group-heading"><span class="platform-index">02</span><h3>Tools</h3><p>What helps me plan, create, publish, and collaborate.</p></div>
+<div aria-label="Creative, marketing, and productivity tools" class="tool-grid"><a aria-label="Visit Canva Pro website" class="platform-tool-card" href="https://www.canva.com/" rel="noopener noreferrer" target="_blank"><img alt="Canva Pro logo" height="140" loading="lazy" src="assets/image-026.png" width="255"/></a>
+<a aria-label="Visit CapCut Pro website" class="platform-tool-card" href="https://www.capcut.com/" rel="noopener noreferrer" target="_blank"><img alt="CapCut Pro logo" height="140" loading="lazy" src="assets/image-027.png" width="255"/></a>
+<a aria-label="Visit Meta Business Suite website" class="platform-tool-card" href="https://business.facebook.com/" rel="noopener noreferrer" target="_blank"><img alt="Meta Business Suite logo" height="140" loading="lazy" src="assets/image-028.png" width="259"/></a>
+<a aria-label="Visit Buffer website" class="platform-tool-card" href="https://buffer.com/" rel="noopener noreferrer" target="_blank"><img alt="Buffer logo" height="140" loading="lazy" src="assets/image-029.png" width="262"/></a>
+<a aria-label="Visit Metricool website" class="platform-tool-card" href="https://metricool.com/" rel="noopener noreferrer" target="_blank"><img alt="Metricool logo" height="140" loading="lazy" src="assets/image-030.png" width="262"/></a>
+<a aria-label="Visit Google Workspace website" class="platform-tool-card" href="https://workspace.google.com/" rel="noopener noreferrer" target="_blank"><img alt="Google Workspace logo" height="132" loading="lazy" src="assets/image-031.png" width="254"/></a>
+<a aria-label="Visit Microsoft 365 website" class="platform-tool-card" href="https://www.microsoft.com/microsoft-365" rel="noopener noreferrer" target="_blank"><img alt="Microsoft 365 logo" height="133" loading="lazy" src="assets/image-032.png" width="254"/></a>
+<a aria-label="Visit Slack website" class="platform-tool-card" href="https://slack.com/" rel="noopener noreferrer" target="_blank"><img alt="Slack logo" height="133" loading="lazy" src="assets/image-033.png" width="265"/></a>
+<a aria-label="Visit Trello website" class="platform-tool-card" href="https://trello.com/" rel="noopener noreferrer" target="_blank"><img alt="Trello logo" height="132" loading="lazy" src="assets/image-034.png" width="265"/></a>
+<a aria-label="Visit Constant Contact website" class="platform-tool-card" href="https://www.constantcontact.com/" rel="noopener noreferrer" target="_blank"><img alt="Constant Contact logo" height="129" loading="lazy" src="assets/image-035.png" width="265"/></a>
+<a aria-label="Visit Jotform website" class="platform-tool-card" href="https://www.jotform.com/" rel="noopener noreferrer" target="_blank"><img alt="Jotform logo" height="129" loading="lazy" src="assets/image-036.png" width="265"/></a>
+<a aria-label="Visit ChatGPT website" class="platform-tool-card" href="https://chatgpt.com/" rel="noopener noreferrer" target="_blank"><img alt="ChatGPT logo" height="129" loading="lazy" src="assets/image-037.png" width="260"/></a>
+<a aria-label="Visit Gemini website" class="platform-tool-card" href="https://gemini.google.com/" rel="noopener noreferrer" target="_blank"><img alt="Gemini logo" height="129" loading="lazy" src="assets/image-038.png" width="265"/></a>
+<a aria-label="Visit Claude website" class="platform-tool-card" href="https://claude.ai/" rel="noopener noreferrer" target="_blank"><img alt="Claude logo" height="129" loading="lazy" src="assets/image-039.png" width="266"/></a>
+<a aria-label="Visit Mailchimp website" class="platform-tool-card" href="https://mailchimp.com/" rel="noopener noreferrer" target="_blank"><img alt="Mailchimp logo" height="129" loading="lazy" src="assets/image-040.png" width="266"/></a></div>
+</div>
+<div class="platform-bottomline"><span>One connected workflow.</span><span>Strategy · Creativity · Execution</span></div>
+</div>
+</section>
+<section aria-labelledby="contactTitle" class="contact-section" id="contact">
+<div class="contact-inner">
+<div class="contact-copy">
+<p class="eyebrow">04 / YOUR MOVE STARTS HERE</p>
+<h2 id="contactTitle"><span class="contact-title-main">HIRE ME!</span><span class="contact-title-line">Ready when you are.</span><span class="contact-title-line">Let’s build something great.</span></h2>
+<p>Tell me about your goals, your ideas, and where you want to take your brand. Let’s figure out how we can make it happen.</p>
+<a class="contact-whatsapp-button" href="https://wa.me/qr/3JYABSMLTQ3GO1?s=p" rel="noopener noreferrer" target="_blank">Message me on WhatsApp <span aria-hidden="true" class="link-arrow">↗</span></a>
+<p class="contact-email"><span>Email me:</span> <a href="mailto:virtuallybanana@gmail.com">virtuallybanana@gmail.com</a></p>
+<p class="contact-note">Scan the QR code with your phone or tap it to start a WhatsApp conversation.</p>
+</div>
+<div class="contact-qr-stack"><a aria-label="Available for work. Click to message Karen on WhatsApp." class="availability-badge" href="https://wa.me/qr/3JYABSMLTQ3GO1?s=p" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="availability-dot"></span> Available for Work</a><a aria-label="Open WhatsApp chat with Karen" class="contact-qr-link" href="https://wa.me/qr/3JYABSMLTQ3GO1?s=p" rel="noopener noreferrer" target="_blank">
+<img alt="Scan this QR code to message Karen on WhatsApp" class="contact-qr-image" height="731" loading="lazy" src="assets/image-041.jpg" width="732"/>
+<span class="contact-qr-caption">Message <strong>“BANANA”</strong><br/>for my resume.</span>
+</a></div>
+</div>
+</section>
+</main>
+<section aria-labelledby="financeGalleryTitle" class="gallery-dialog" id="financeGallery">
+<div class="gallery-panel">
+<div class="gallery-head">
+<div>
+<p class="eyebrow">Selected project · 01</p>
+<h2 id="financeGalleryTitle">B2B Financial Services — USA</h2>
+<p>Primary Funding Corporation · Strategic social media content, financial education graphics, blog visuals, and integrated marketing campaigns.</p>
+</div>
+<a aria-label="Close project gallery" class="gallery-close" href="#work">×</a>
+</div>
+<div class="gallery-body">
+<div class="gallery-grid">
+<figure class="gallery-item"><img alt="Primary Funding Corporation portfolio overview and brand system" src="assets/image-042.webp"/><figcaption>01 — Brand Overview &amp; Project Approach</figcaption></figure>
+<figure class="gallery-item"><img alt="Primary Funding Corporation social media carousel graphics" src="assets/image-043.webp"/><figcaption>02 — Social Media Carousel Graphics</figcaption></figure>
+<figure class="gallery-item"><img alt="Primary Funding Corporation blog and editorial graphics" src="assets/image-044.webp"/><figcaption>03 — Blog &amp; Editorial Graphics</figcaption></figure>
+<figure class="gallery-item"><img alt="Primary Funding Corporation content strategy and LinkedIn organic performance graphics" height="1800" loading="lazy" src="assets/image-045.webp" width="1499"/><figcaption>04 — Content Strategy &amp; Operations</figcaption></figure>
+<figure class="gallery-item"><img alt="Primary Funding Corporation competitor insights and Instagram audience growth graphics" height="1800" loading="lazy" src="assets/image-046.webp" width="1499"/><figcaption>05 — Social Media Growth &amp; Performance</figcaption></figure>
+<figure class="gallery-item"><img alt="Primary Funding Corporation social media interaction analytics and Meta Ads campaign results" height="1800" loading="lazy" src="assets/image-047.webp" width="1499"/><figcaption>06 — Meta Ads Campaign Performance</figcaption></figure>
+<figure class="gallery-item"><img alt="Primary Funding Corporation social media publishing calendar and scheduling workflow" height="1800" loading="lazy" src="assets/image-048.webp" width="1499"/><figcaption>07 — Content Calendar &amp; Publishing Workflow</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="midiGalleryTitle" class="gallery-dialog" id="midiGallery">
+<div class="gallery-panel">
+<div class="gallery-head">
+<div>
+<p class="eyebrow">Selected project · 02</p>
+<h2 id="midiGalleryTitle">B2B Product Consultation Services — USA</h2>
+<p>Million Dollar Inventions · Startup branding, multi-platform content, and social media branding</p>
+</div>
+<a aria-label="Close project gallery" class="gallery-close" href="#work">×</a>
+</div>
+<div class="gallery-body">
+<div class="gallery-grid">
+<figure class="gallery-item"><img alt="Million Dollar Inventions — Brand Identity &amp; Creative Direction, complete brand board" src="assets/image-049.webp" width="1706" height="2048" loading="lazy"/><figcaption>01 — Brand Identity &amp; Creative Direction</figcaption></figure>
+<figure class="gallery-item"><img alt="Million Dollar Inventions social media carousel graphics" src="assets/image-050.webp"/><figcaption>02 — Social Media Carousels</figcaption></figure>
+<figure class="gallery-item"><img alt="Million Dollar Inventions YouTube podcast thumbnail designs" src="assets/image-051.webp"/><figcaption>03 — YouTube Podcast Thumbnail Design</figcaption></figure>
+<figure class="gallery-item"><img alt="Million Dollar Inventions — Podcast, Video Repurposing and Reels showcase" src="assets/image-052.webp" width="1706" height="2048" loading="lazy"/><figcaption>04 — Podcast, Video Repurposing and Reels</figcaption></figure>
+<figure class="gallery-item"><img alt="Million Dollar Inventions weekly content tracker and content operations graphic" height="1800" loading="lazy" src="assets/image-053.webp" width="1499"/><figcaption>05 — Content Strategy &amp; Operations</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="perryGalleryTitle" class="gallery-dialog" id="perryGallery">
+<div class="gallery-panel">
+<div class="gallery-head">
+<div>
+<p class="eyebrow">Selected project · 03</p>
+<h2 id="perryGalleryTitle">B2B Real Estate Advisory — Singapore</h2>
+<p>Perry Siow Advisory · Personal brand development, LinkedIn and YouTube optimization, real estate marketing graphics, and content strategy.</p>
+</div>
+<a aria-label="Close project gallery" class="gallery-close" href="#work">×</a>
+</div>
+<div class="gallery-body">
+<div class="gallery-grid">
+<figure class="gallery-item"><img alt="Perry Siow Advisory real estate carousel graphic 01" src="assets/image-054.webp"/><figcaption>01 — Real Estate Content Carousel</figcaption></figure>
+<figure class="gallery-item"><img alt="Perry Siow Advisory LinkedIn profile and banner optimization graphic 02" src="assets/image-055.webp"/><figcaption>02 — LinkedIn Profile Optimization</figcaption></figure>
+<figure class="gallery-item"><img alt="Perry Siow Advisory social media carousel graphic 03" src="assets/image-056.webp"/><figcaption>03 — Social Media Carousel</figcaption></figure>
+<figure class="gallery-item"><img alt="Perry Siow Advisory Trello content operations board showing onboarding, scheduling, and completed marketing tasks" height="1800" loading="lazy" src="assets/image-057.webp" width="1499"/><figcaption>04 — Content Strategy &amp; Operations</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="brandCollateralGalleryTitle" class="gallery-dialog" id="brandCollateralGallery">
+<div class="gallery-panel">
+<div class="gallery-head">
+<div>
+<p class="eyebrow">Selected Project · 04</p>
+<h2 id="brandCollateralGalleryTitle">Brand Collateral &amp; Marketing Assets</h2>
+<p>Cross-industry creative content, branded social media graphics, promotional campaigns, real estate listing and sold-property visuals, café and skincare marketing, and engaging educational content.</p>
+</div>
+<a aria-label="Close project gallery" class="gallery-close" href="#work">×</a>
+</div>
+<div class="gallery-body"><div class="gallery-grid"><figure class="gallery-item"><img alt="Real Estate Marketing Collateral" height="1600" loading="lazy" src="assets/image-058.webp" width="1333"/><figcaption>01 — Real Estate Marketing Collateral</figcaption></figure><figure class="gallery-item"><img alt="Real Estate Educational Carousel" height="1600" loading="lazy" src="assets/image-059.webp" width="1333"/><figcaption>02 — Real Estate Educational Carousel</figcaption></figure><figure class="gallery-item"><img alt="Property Listing &amp; Sales Graphics" height="1600" loading="lazy" src="assets/image-060.webp" width="1333"/><figcaption>03 — Property Listing &amp; Sales Graphics</figcaption></figure><figure class="gallery-item"><img alt="Real Estate Brand Collateral" height="1600" loading="lazy" src="assets/image-061.webp" width="1333"/><figcaption>04 — Real Estate Brand Collateral</figcaption></figure><figure class="gallery-item"><img alt="Property Presentation &amp; Interior Visuals" height="1600" loading="lazy" src="assets/image-062.webp" width="1333"/><figcaption>05 — Property Presentation &amp; Interior Visuals</figcaption></figure><figure class="gallery-item"><img alt="Skincare Promotional Graphics" height="1600" loading="lazy" src="assets/image-063.webp" width="1333"/><figcaption>06 — Skincare Promotional Graphics</figcaption></figure><figure class="gallery-item"><img alt="Skincare Educational Carousel" height="1600" loading="lazy" src="assets/image-064.webp" width="1333"/><figcaption>07 — Skincare Educational Carousel</figcaption></figure><figure class="gallery-item"><img alt="Fashion &amp; Lifestyle Campaign Graphics" height="1600" loading="lazy" src="assets/image-065.webp" width="1333"/><figcaption>08 — Fashion &amp; Lifestyle Campaign Graphics</figcaption></figure><figure class="gallery-item"><img alt="Café Product Launch Campaign" height="1600" loading="lazy" src="assets/image-066.webp" width="1333"/><figcaption>09 — Café Product Launch Campaign</figcaption></figure><figure class="gallery-item"><img alt="Product Launch Content Calendar &amp; Strategy" height="1600" loading="lazy" src="assets/image-067.webp" width="1333"/><figcaption>10 — Product Launch Content Calendar &amp; Strategy</figcaption></figure><figure class="gallery-item"><img alt="Food &amp; Beverage Menu Marketing" height="1600" loading="lazy" src="assets/image-068.webp" width="1333"/><figcaption>11 — Food &amp; Beverage Menu Marketing</figcaption></figure></div></div>
+</div>
+</section>
+<footer>
+<div class="footer-inner">
+<div class="footer-contact-group">
+<span>© <span id="year"></span><span aria-hidden="true" class="philippine-flag footer-flag">🇵🇭</span>   Hey, I’m Karen!</span>
+<a aria-label="Email virtuallybanana@gmail.com" class="footer-email" href="mailto:virtuallybanana@gmail.com">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 5.5h18v13H3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8"></path><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+<span>virtuallybanana@gmail.com</span>
+</a>
+</div>
+<span>SOCIAL MEDIA MANAGEMENT • STRATEGY • CREATIVE</span>
+</div>
+</footer>
+<script>
+  // Mobile navigation reliability fix
+  window.toggleSiteMenu = function () {
+    const button = document.getElementById('menuToggle');
+    const nav = document.getElementById('siteNav');
+    if (!button || !nav) return;
+    const isOpen = nav.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(isOpen));
+    button.textContent = isOpen ? '✕ Close' : '☰ Menu';
+  };
+
+  const menuToggle = document.getElementById('menuToggle');
+  const siteNav = document.getElementById('siteNav');
+  if (menuToggle && siteNav) {
+    menuToggle.addEventListener('click', window.toggleSiteMenu);
+    siteNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰ Menu';
+    }));
+  }
+
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Enlarge project images on click so clients can read the artwork clearly.
+  (() => {
+    const projectImages = document.querySelectorAll(
+      '#financeGallery .gallery-item img, #midiGallery .gallery-item img, #perryGallery .gallery-item img, #brandGallery .gallery-item img, #brandCollateralGallery .gallery-item img, #gallery04 .gallery-item img'
+    );
+    // Include any fourth selected-project gallery by its gallery-dialog position as a safe fallback.
+    const galleries = Array.from(document.querySelectorAll('.gallery-dialog'));
+    galleries.forEach((gallery) => {
+      const label = gallery.querySelector('.eyebrow')?.textContent || '';
+      if (/Selected project/i.test(label)) {
+        gallery.querySelectorAll('.gallery-item img').forEach(img => img.classList.add('js-zoomable-project-image'));
+      }
+    });
+    const overlay = document.createElement('div');
+    overlay.className = 'project-image-lightbox';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Enlarged project image');
+    overlay.innerHTML = '<div class="project-image-lightbox__frame"><button class="project-image-lightbox__close" type="button" aria-label="Close enlarged image">×</button><img class="project-image-lightbox__image" alt=""><div class="project-image-lightbox__caption"></div></div>';
+    document.body.appendChild(overlay);
+    const largeImage = overlay.querySelector('.project-image-lightbox__image');
+    const caption = overlay.querySelector('.project-image-lightbox__caption');
+    const closeButton = overlay.querySelector('.project-image-lightbox__close');
+    let previousFocus = null;
+    function closeLightbox() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      largeImage.removeAttribute('src');
+      if (previousFocus && previousFocus.focus) previousFocus.focus();
+    }
+    function openLightbox(img) {
+      previousFocus = img;
+      largeImage.src = img.currentSrc || img.src;
+      largeImage.alt = img.alt || 'Project portfolio image';
+      caption.textContent = img.closest('figure')?.querySelector('figcaption')?.textContent || img.alt || '';
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      closeButton.focus({preventScroll:true});
+    }
+    document.addEventListener('click', (event) => {
+      const img = event.target.closest('.gallery-dialog .gallery-item img');
+      if (img) { event.preventDefault(); openLightbox(img); }
+    });
+    closeButton.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', (event) => { if (event.target === overlay) closeLightbox(); });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
+    });
+  })();
+
+</script>
+<script>
+(() => {
+  const block = document.querySelector('.live-results-showcase');
+  if (!block) return;
+  const reveal = () => block.classList.add('lr-visible');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        reveal();
+        observer.disconnect();
+      }
+    }, { threshold: 0.14 });
+    observer.observe(block);
+  } else {
+    reveal();
+  }
+  const glow = block.querySelector('.lr-glow');
+  const finePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  if (glow && finePointer) {
+    block.addEventListener('pointermove', (event) => {
+      const rect = block.getBoundingClientRect();
+      glow.style.left = (event.clientX - rect.left) + 'px';
+      glow.style.top = (event.clientY - rect.top) + 'px';
+      block.classList.add('lr-cursor-active');
+    });
+    block.addEventListener('pointerleave', () => block.classList.remove('lr-cursor-active'));
+  }
+})();
+</script>
+<script>
+(() => {
+  // Follow the pointer only while it is over a clickable icon/control.
+  if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  const glow = document.createElement('div');
+  glow.id = 'site-clickable-icon-glow';
+  glow.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(glow);
+  const clickable = 'a[href], button, [role="button"], [role="link"], input[type="submit"], input[type="button"], summary';
+  const iconLike = 'svg, i, [class*="icon"], [class*="arrow"], [aria-label], [data-lucide]';
+  let active = null;
+  let raf = 0, x = 0, y = 0;
+  const moveGlow = () => {
+    raf = 0;
+    glow.style.left = x + 'px';
+    glow.style.top = y + 'px';
+  };
+  document.addEventListener('pointerover', (event) => {
+    const control = event.target.closest(clickable);
+    if (!control) return;
+    const icon = event.target.closest(iconLike);
+    // Use the icon itself when present; otherwise the clickable control is the target.
+    active = icon && control.contains(icon) ? icon : control;
+    glow.classList.add('is-visible');
+  }, true);
+  document.addEventListener('pointermove', (event) => {
+    if (!active) return;
+    x = event.clientX; y = event.clientY;
+    if (!raf) raf = requestAnimationFrame(moveGlow);
+  }, { passive: true, capture: true });
+  document.addEventListener('pointerout', (event) => {
+    if (!active) return;
+    const next = event.relatedTarget;
+    if (next && (active.contains(next) || next.closest?.(clickable) === active.closest?.(clickable))) return;
+    active = null;
+    glow.classList.remove('is-visible');
+  }, true);
+  window.addEventListener('blur', () => { active = null; glow.classList.remove('is-visible'); });
+})();
+</script>
+</body>
+</html>
